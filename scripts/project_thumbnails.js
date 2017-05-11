@@ -5,7 +5,6 @@ $(document).ready(function()
     console.log("im ready");
     var my_projects = [];
     var selected_project;
-    //var section_width = $("#projects_section").width();
     var project_thumbnail_section_html = document.getElementById("projects_section").innerHTML;
     
     var xhr = new XMLHttpRequest();
@@ -14,11 +13,9 @@ $(document).ready(function()
         var myJSON = JSON.parse(xhr.responseText);
         my_projects = myJSON.projects;
         var section_width = $("#projects_section").width();
-        console.log($("#projects_section").width());
         project_thumbnail_section_html += drawProjectThumbnail(my_projects, section_width);
         document.getElementById("projects_section").innerHTML = project_thumbnail_section_html;
         $("#projects_section").width(section_width);
-        console.log($("#projects_section").width());
     }
     var url = "scripts/projects.json";
     xhr.open("GET", url, true);
@@ -38,6 +35,10 @@ $(document).ready(function()
         var hovered_project_index = $(this).index();
         var hovered_project_info = $(this).find(".project_thumbnail_info").attr("id");
         document.getElementById(hovered_project_info).style.display = "none";
+    });
+    $("#projects_section").on("click", ".project_thumbnail", function(e)
+    {
+        test(this);
     });
 });
 
