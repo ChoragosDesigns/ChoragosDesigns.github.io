@@ -5,7 +5,7 @@ $(document).ready(function()
     console.log("im ready");
     var my_projects = [];
     var selected_project;
-    var section_width = $("#projects_section").width();
+    //var section_width = $("#projects_section").width();
     var project_thumbnail_section_html = document.getElementById("projects_section").innerHTML;
     
     var xhr = new XMLHttpRequest();
@@ -13,6 +13,7 @@ $(document).ready(function()
     {
         var myJSON = JSON.parse(xhr.responseText);
         my_projects = myJSON.projects;
+        var section_width = $("#projects_section").width();
         project_thumbnail_section_html += drawProjectThumbnail(my_projects, section_width);
         document.getElementById("projects_section").innerHTML = project_thumbnail_section_html;
         $("projects_section").width(section_width);
