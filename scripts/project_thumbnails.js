@@ -13,10 +13,10 @@ $(document).ready(function()
     {
         var myJSON = JSON.parse(xhr.responseText);
         my_projects = myJSON.projects;
-        var section_width = $("#projects").width();
+        var section_width = $("#projects_section").width();
         project_thumbnail_section_html += drawProjectThumbnail(my_projects, section_width);
         document.getElementById("projects_section").innerHTML = project_thumbnail_section_html;
-        $("projects").width(section_width);
+        $("projects_section").width(section_width);
     }
     var url = "scripts/projects.json";
     xhr.open("GET", url, true);
