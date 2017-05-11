@@ -17,7 +17,7 @@ $(document).ready(function()
         console.log($("#projects_section").width());
         project_thumbnail_section_html += drawProjectThumbnail(my_projects, section_width);
         document.getElementById("projects_section").innerHTML = project_thumbnail_section_html;
-        //$("projects_section").width(section_width);
+        $("#projects_section").width(section_width);
         console.log($("#projects_section").width());
     }
     var url = "scripts/projects.json";
