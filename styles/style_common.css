@@ -1,1 +1,85 @@
+body
+{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
 
+
+
+#header
+{
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+    background-color: orange;
+}
+#header a
+{
+    color: black;
+    text-decoration: none;
+}
+#ui_buttons_wrapper
+{
+    padding: 14px 10.75px;
+}
+.ui_button
+{
+    display: inline;
+    margin: 0 7.5pt 0 0;
+    padding: 2.5pt 7pt;
+    border: 1px solid yellow;
+    border-radius: 50px;
+    font-size: 13.25pt;
+}
+#current_page, .ui_button:hover
+{
+    background-color: yellow;
+}
+#current_page, .ui_button a:hover
+{
+    color: orange;
+}
+
+
+#content
+{
+    width: 100%;
+    position: absolute;
+    margin-top: 47.55px;
+}
+
+.section_title
+{
+    padding: 110px 0 30px 0;
+    background-color: rgba(0, 120, 180, 0.75);
+}
+.section_title h3, .section_title p
+{
+    margin: 0;
+    line-height: 145%;
+    text-align: center;
+}
+.section_title h3
+{
+    font-size: 20pt;
+    font-weight: 600;
+}
+.section_title p
+{
+    font-size: 13.25pt;
+}
+.section_title hr
+{
+    width: 65%;
+    height: 3px;
+    margin: 0;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+.section
+{
+    margin: 0 7.5%;
+    padding: 35px 2.5%;
+}
