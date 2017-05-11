@@ -39,6 +39,15 @@ $(document).ready(function()
     $("#projects_section").on("click", ".project_thumbnail", function(e)
     {
         test(this);
+        var selected_project_index = $(this).index();
+        var selected_project_html = "";
+        selected_project_html += drawSelectedProject(my_projects, selected_project_index);
+        selected_project_html +="<p id='more_projects_button'><u>Go Back</u></p>";
+        document.getElementById("projects_section").inneHTML = selected_project_html;
+    });
+    $("#projects_section").on("click", "#more_projects_button", function(e)
+    {
+        document.getElementById("projects_section").inneHTML = project_thumbnail_section_html;
     });
 });
 
