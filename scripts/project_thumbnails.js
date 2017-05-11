@@ -6,7 +6,7 @@ $(document).ready(function()
     var my_projects = [];
     var selected_project;
     var section_width = $("#projects_section").width();
-    var project_thumbnail_section_html = document.getElementById("pojects_section").innerHTML;
+    var project_thumbnail_section_html = document.getElementById("projects_section").innerHTML;
     
     var xhr = new XMLHttpRequest();
     xhr.onload = function()
