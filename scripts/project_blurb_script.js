@@ -4,7 +4,6 @@ function test(t)
 {
     console.log(t)
 }
-
 function drawSelectedProject(all_projects_array, project_index)
 {
     var selected_project_html = "";
@@ -17,7 +16,7 @@ function drawSelectedProject(all_projects_array, project_index)
     {
         selected_project_html += "<p class='project_description_text'>" + all_projects_array[project_index].description[p] + "</p>";
     }
-    selected_project_html += "<p class='project_description_button'>SHOW MORE</p>"
+    selected_project_html += "<p class='ui_button project_description_button'>SHOW MORE</p>"
     selected_project_html += "</div>";
     selected_project_html += "</div>";
     selected_project_html += "<div class='project_image_gallery'>";
@@ -28,10 +27,8 @@ function drawSelectedProject(all_projects_array, project_index)
     selected_project_html += "</div>";
     selected_project_html += "</div>";
     selected_project_html += "</div>";
-    //selected_project_html += "<p id='more_projects_button'><u>Go Back</u></p>"
     return selected_project_html;
 }
-
 function drawImageGalleryIcons(set_images, selected_image)
 {
 	var image_gallery_icons_html = "";
