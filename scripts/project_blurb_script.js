@@ -46,7 +46,7 @@ function drawImageGalleryIcons(set_images, selected_image)
 	}
 	return image_gallery_icons_html;
 }
-function hideText(was_triggered)
+function hideText(was_triggered, this_)
 {
     console.log("hello");
     if(was_triggered == false)
@@ -59,16 +59,17 @@ function hideText(was_triggered)
     else
     {
         console.log("hi again");
-        if($(this).parent().parent().find("project_description_hidden_text").is(':hidden'))
+        console.log(this_);
+        if($(this_).parent().parent().find("project_description_hidden_text").is(':hidden'))
         {
             console.log("ohe hey there");
-            $(this).parent().parent().find("project_description_hidden_text").css('display', 'inline');
-            $(this).text("SHOW LESS");
+            $(this_).parent().parent().find("project_description_hidden_text").css('display', 'inline');
+            $(this_).text("SHOW LESS");
         }
         else
         {
-            $(this).parent().parent().find("project_description_hidden_text").css('display', 'none');
-            $(this).text("SHOW MORE");
+            $(this_).parent().parent().find("project_description_hidden_text").css('display', 'none');
+            $(this_).text("SHOW MORE");
         }
     }
 }
