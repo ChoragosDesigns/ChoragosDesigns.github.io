@@ -19,9 +19,9 @@ function drawSelectedProject(all_projects_array, project_index)
     selected_project_html += "<p class='project_description_button'>SHOW MORE</p>"
     selected_project_html += "</div>";
     selected_project_html += "</div>";
-    selected_project_html += "<div class='featured_project_image_gallery'>";
-    selected_project_html += "<img class='featured_project_image_gallery_img' id='selected_project_img' src='" + all_projects_array[project_index].imgs[0].src + "'/>";
-    selected_project_html += "<div class='featured_project_image_gallery_icon_wrapper'>";
+    selected_project_html += "<div class='project_image_gallery'>";
+    selected_project_html += "<img class='project_image_gallery_img' id='selected_project_img' src='" + all_projects_array[project_index].imgs[0].src + "'/>";
+    selected_project_html += "<div class='project_image_gallery_icon_wrapper'>";
     selected_project_html += drawImageGalleryIcons(all_projects_array[project_index].imgs, 0);
     selected_project_html += "</div>";
     selected_project_html += "</div>";
