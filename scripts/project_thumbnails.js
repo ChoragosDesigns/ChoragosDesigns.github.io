@@ -2,7 +2,6 @@
 
 $(document).ready(function()
 {
-    console.log("im ready");
     var my_projects = [];
     var selected_project;
     var project_thumbnail_section_html = document.getElementById("projects_section").innerHTML;
@@ -41,16 +40,18 @@ $(document).ready(function()
         test(this);
         var selected_project_index = $(this).index();
         var selected_project_html = "";
-        console.log($(this).index());
         selected_project_html += drawSelectedProject(my_projects, selected_project_index);
         selected_project_html +="<p id='more_projects_button'><u>Go Back</u></p>";
         document.getElementById("projects_section").innerHTML = selected_project_html;
         hideText(false, null);
-        console.log(selected_project_html);
     });
     $("#projects_section").on("click", ".project_description_button", function(e)
     {
         hideText(true, this);
+    });
+    $("#projects_section").on("click", ".image_gallery_icon", function(e)
+    {
+        changeCurrentImageGalleryImg(my_projects);
     });
     $("#projects_section").on("click", "#more_projects_button", function(e)
     {
