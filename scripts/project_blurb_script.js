@@ -14,9 +14,9 @@ function drawSelectedProject(all_projects_array, project_index)
     selected_project_html += "<p class='project_dates'>" + all_projects_array[project_index].dates + "</p>";
     for(var p = 0; p < all_projects_array[project_index].description.length; p++)
     {
-        selected_project_html += "<p class='featured_project_description_text'>" + all_projects_array[project_index].description[p] + "</p>";
+        selected_project_html += "<p class='project_description_text'>" + all_projects_array[project_index].description[p] + "</p>";
     }
-    selected_project_html += "<p class='featured_project_description_button'>SHOW MORE</p>"
+    selected_project_html += "<p class='project_description_button'>SHOW MORE</p>"
     selected_project_html += "</div>";
     selected_project_html += "</div>";
     selected_project_html += "<div class='featured_project_image_gallery'>";
