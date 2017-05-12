@@ -50,6 +50,6 @@ function hideText()
 {
     $(".project_description_hidden_text").each(function(i)
     {
-        $(this).parent().parent().find(".featured_project_description_hidden_text").css('display', 'none');
+        $(this).parent().parent().find(".project_description_hidden_text").css('display', 'none');
     });
 }
