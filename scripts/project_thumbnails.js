@@ -45,6 +45,7 @@ $(document).ready(function()
         selected_project_html += drawSelectedProject(my_projects, selected_project_index);
         selected_project_html +="<p id='more_projects_button'><u>Go Back</u></p>";
         document.getElementById("projects_section").innerHTML = selected_project_html;
+        hideText();
         console.log(selected_project_html);
     });
     $("#projects_section").on("click", "#more_projects_button", function(e)
