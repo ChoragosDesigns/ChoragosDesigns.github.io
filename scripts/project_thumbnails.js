@@ -51,7 +51,7 @@ $(document).ready(function()
     });
     $("#projects_section").on("click", ".image_gallery_icon", function(e)
     {
-        changeCurrentImageGalleryImg(my_projects);
+        changeCurrentImageGalleryImg(my_projects, e);
     });
     $("#projects_section").on("click", "#more_projects_button", function(e)
     {

@@ -72,9 +72,9 @@ function hideText(was_triggered, this_)
         }
     }
 }
-function changeCurrentImageGalleryImg(project_list)
+function changeCurrentImageGalleryImg(project_list, e_)
 {
-    if(e.target.id != "image_gallery_icon_selected")
+    if(e_.target.id != "image_gallery_icon_selected")
     {
         var image_index = $(this).index();
         var project_index = $(this).parent().parent().parent().parent().index(".featured_project");
