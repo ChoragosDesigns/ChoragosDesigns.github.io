@@ -48,6 +48,10 @@ $(document).ready(function()
         hideText(false);
         console.log(selected_project_html);
     });
+    $("#projects_section").on("click", ".project_description_button", function(e)
+    {
+        hideText(true);
+    });
     $("#projects_section").on("click", "#more_projects_button", function(e)
     {
         document.getElementById("projects_section").innerHTML = project_thumbnail_section_html;
