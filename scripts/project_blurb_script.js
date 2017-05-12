@@ -78,9 +78,7 @@ function changeCurrentImageGalleryImg(project_list, e_, this_)
     {
         var image_index = $(this_).index();
         var project_index = $(this_).parent().parent().parent().parent().index(".project_content");
-        console.log(project_list);
-        console.log(project_index);
-        console.log(this_);
+        console.log($(this_).parent().parent().parent().parent());
         $(this_).parent().parent().find(".project_image_gallery_img").attr("src", project_list[project_index].imgs[image_index].src);
         $(this_).parent().html(drawImageGalleryIcons(project_list[project_index].imgs, image_index));
     }
