@@ -16,29 +16,6 @@ function drawSelectedProject(all_projects_array, project_index)
     {
         selected_project_html += "<p class='project_description_text'>" + all_projects_array[project_index].description[p] + "</p>";
     }
-    selected_project_html += "<p class='project_description_button'>SHOW MORE</p>"
-    selected_project_html += "</div>";
-    selected_project_html += "</div>";
-    selected_project_html += "<div class='project_image_gallery'>";
-    selected_project_html += "<img class='project_image_gallery_img' id='selected_project_img' src='" + all_projects_array[project_index].imgs[0].src + "'/>";
-    selected_project_html += "<div class='project_image_gallery_icon_wrapper'>";
-    selected_project_html += drawImageGalleryIcons(all_projects_array[project_index].imgs, 0);
-    selected_project_html += "</div>";
-    selected_project_html += "</div>";
-    selected_project_html += "</div>";
-    selected_project_html += "</div>";
-    return selected_project_html;
-    /*
-    var selected_project_html = "";
-    selected_project_html += "<div class='project_blurb'>";
-    selected_project_html += "<div class='project_description'>";
-    selected_project_html += "<div class='project_description_content'>";
-    selected_project_html += "<p class='project_title'>" + all_projects_array[project_index].name + "</p>";
-    selected_project_html += "<p class='project_dates'>" + all_projects_array[project_index].dates + "</p>";
-    for(var p = 0; p < all_projects_array[project_index].description.length; p++)
-    {
-        selected_project_html += "<p class='project_description_text'>" + all_projects_array[project_index].description[p] + "</p>";
-    }
     selected_project_html += "<p class='ui_button project_description_button'>SHOW MORE</p>"
     selected_project_html += "</div>";
     selected_project_html += "</div>";
@@ -50,7 +27,7 @@ function drawSelectedProject(all_projects_array, project_index)
     selected_project_html += "</div>";
     selected_project_html += "</div>";
     selected_project_html += "</div>";
-    return selected_project_html;*/
+    return selected_project_html;
 }
 function drawImageGalleryIcons(set_images, selected_image)
 {
