@@ -4,24 +4,24 @@
     display: inline-block;
     margin: 40px 0 20px 0;
 }
-.project_description
+.featured_project_main_content
 {
     display: inline-block;
-    background-color: rgba(12, 120, 120, 0.5);
+    background-color: orange;
 }
-.project_image_gallery
+.featured_project_image_gallery
 {
     width: 50%;
     float: left;
 }
-.project_image_gallery_img
+.featured_project_image_gallery_img
 {
     width: 100%;
     margin: 0 auto;
     display: block;
     background-color: white;
 }
-.project_image_gallery_icon_wrapper
+.featured_project_image_gallery_icon_wrapper
 {
 	display: table;
 	margin: 0 auto 0 auto;
@@ -45,47 +45,47 @@
 {
 	background-color: #0c0c0c;
 }
-.project_description
+.featured_project_description
 {
     width: 50%;
     float: left;
     display: table;
 }
-.project_description a
+.featured_project_description a
 {
     color: black;
 }
-.project_description a:hover
+.featured_project_description a:hover
 {
     color: #00aabb;
 }
-.project_description_content
+.pasta
 {
     display: table-cell;
     vertical-align: middle;
 }
-.project_title
+.featured_project_title
 {
     margin: 0;
     padding-left: 2%;
     font-size: 17pt;
     font-weight: 600;
 }
-.project_dates
+.featured_project_dates
 {
     margin: 0;
     padding-left: 2%;
     font-size: 12.5pt;
     color: rgb(50, 50, 50)
 }
-.project_description_text
+.featured_project_description_text
 {
     margin: 0;
     padding: 2% 2% 0 2%;
     font-size: 14.5pt;
     line-height: 130%;
 }
-.project_description_button
+.featured_project_description_button
 {
     font-size: 12pt;
     margin: 2% auto;
@@ -94,7 +94,7 @@
     border-radius: 50px;
     display: table;
 }
-.project_description_button:hover
+.featured_project_description_button:hover
 {
     border: 2px solid yellow;
     background-color: yellow;
