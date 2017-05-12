@@ -64,14 +64,14 @@
     display: table-cell;
     vertical-align: middle;
 }
-.featured_project_title
+.project_title
 {
     margin: 0;
     padding-left: 2%;
     font-size: 17pt;
     font-weight: 600;
 }
-.featured_project_dates
+.project_dates
 {
     margin: 0;
     padding-left: 2%;
