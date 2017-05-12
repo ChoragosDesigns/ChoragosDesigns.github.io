@@ -4,6 +4,7 @@ function test(t)
 {
     console.log(t)
     ////////////project_description_hidden_text
+    console.log("koddaaaaaaak");
 }
 function drawSelectedProject(all_projects_array, project_index)
 {
@@ -48,8 +49,14 @@ function drawImageGalleryIcons(set_images, selected_image)
 }
 function hideText()
 {
-    $(".project_description_hidden_text").each(function(i)
+    if($(this).parent().parent().find("project_description_hidden_text").is(':hidden'))
     {
-        $(this).parent().parent().find(".project_description_hidden_text").css('display', 'none');
-    });
+        $(this).parent().parent().find("project_description_hidden_text").css('display', 'inline');
+        $(this).text("SHOW LESS");
+    }
+    else
+    {
+        $(this).parent().parent().find("project_description_hidden_text").css('display', 'none');
+        $(this).text("SHOW MORE");
+    }
 }
