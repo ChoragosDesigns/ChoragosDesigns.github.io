@@ -72,13 +72,13 @@ function hideText(was_triggered, this_)
         }
     }
 }
-function changeCurrentImageGalleryImg(project_list, e_)
+function changeCurrentImageGalleryImg(project_list, e_, this_)
 {
     if(e_.target.id != "image_gallery_icon_selected")
     {
-        var image_index = $(this).index();
-        var project_index = $(this).parent().parent().parent().parent().index(".featured_project");
-        $(this).parent().parent().find(".featured_project_image_gallery_img").attr("src", project_list[project_index].imgs[image_index].src);
-        $(this).parent().html(drawImageGalleryIcons(project_list[project_index].imgs, image_index));
+        var image_index = $(this_).index();
+        var project_index = $(this_).parent().parent().parent().parent().index(".featured_project");
+        $(this_).parent().parent().find(".featured_project_image_gallery_img").attr("src", project_list[project_index].imgs[image_index].src);
+        $(this_).parent().html(drawImageGalleryIcons(project_list[project_index].imgs, image_index));
     }
 }
