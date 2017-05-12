@@ -85,7 +85,7 @@
     font-size: 14.5pt;
     line-height: 130%;
 }
-.project_description_button
+/*.project_description_button
 {
     font-size: 12pt;
     margin: 2% auto;
@@ -93,12 +93,12 @@
     border: 2px solid yellow;
     border-radius: 50px;
     display: table;
-}
+}*
 .project_description_button:hover
 {
     border: 2px solid yellow;
     background-color: yellow;
-}
+}*/
 .featured_project_divider
 {
     width: 57%;
