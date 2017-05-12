@@ -48,6 +48,7 @@ function drawImageGalleryIcons(set_images, selected_image)
 }
 function hideText(was_triggered)
 {
+    console.log("hello");
     if(was_triggered == false)
     {
         $(".project_description_hidden_text").each(function(i)
@@ -57,8 +58,10 @@ function hideText(was_triggered)
     }
     else
     {
+        console.log("hi again");
         if($(this).parent().parent().find("project_description_hidden_text").is(':hidden'))
         {
+            console.log("ohe hey there");
             $(this).parent().parent().find("project_description_hidden_text").css('display', 'inline');
             $(this).text("SHOW LESS");
         }
