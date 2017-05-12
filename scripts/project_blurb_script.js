@@ -7,7 +7,7 @@ function test(t)
 function drawSelectedProject(all_projects_array, project_index)
 {
     var selected_project_html = "";
-    selected_project_html += "<div class='featured_project_main_content'>";
+    selected_project_html += "<div class='project_content'>";
     selected_project_html += "<div class='featured_project_description'>";
     selected_project_html += "<div class='pasta'>";
     selected_project_html += "<p class='project_title'>" + all_projects_array[project_index].name + "</p>";
