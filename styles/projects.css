@@ -9,19 +9,19 @@
     display: inline-block;
     background-color: orange;
 }
-.featured_project_image_gallery
+.project_image_gallery
 {
     width: 50%;
     float: left;
 }
-.featured_project_image_gallery_img
+.project_image_gallery_img
 {
     width: 100%;
     margin: 0 auto;
     display: block;
     background-color: white;
 }
-.featured_project_image_gallery_icon_wrapper
+.project_image_gallery_icon_wrapper
 {
 	display: table;
 	margin: 0 auto 0 auto;
