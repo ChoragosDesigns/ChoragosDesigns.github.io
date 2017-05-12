@@ -48,7 +48,7 @@ function drawImageGalleryIcons(set_images, selected_image)
 }
 function hideText()
 {
-    $(".featured_project_description_hidden_text").each(function(i)
+    $(".project_description_hidden_text").each(function(i)
     {
         $(this).parent().parent().find(".featured_project_description_hidden_text").css('display', 'none');
     });
