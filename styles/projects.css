@@ -78,14 +78,14 @@
     font-size: 12.5pt;
     color: rgb(50, 50, 50)
 }
-.featured_project_description_text
+.project_description_text
 {
     margin: 0;
     padding: 2% 2% 0 2%;
     font-size: 14.5pt;
     line-height: 130%;
 }
-.featured_project_description_button
+.project_description_button
 {
     font-size: 12pt;
     margin: 2% auto;
@@ -94,7 +94,7 @@
     border-radius: 50px;
     display: table;
 }
-.featured_project_description_button:hover
+.project_description_button:hover
 {
     border: 2px solid yellow;
     background-color: yellow;
