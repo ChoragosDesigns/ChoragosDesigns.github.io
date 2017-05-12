@@ -59,15 +59,15 @@ function hideText(was_triggered, this_)
     {
         console.log(this_);
         console.log($(this_).parent().parent());
-        if($(this_).parent().parent().find("project_description_hidden_text").is(':hidden'))
+        if($(this_).parent().parent().find(".project_description_hidden_text").is(':hidden'))
         {
             console.log("ohe hey there");
-            $(this_).parent().parent().find("project_description_hidden_text").css('display', 'inline');
+            $(this_).parent().parent().find(".project_description_hidden_text").css('display', 'inline');
             $(this_).text("SHOW LESS");
         }
         else
         {
-            $(this_).parent().parent().find("project_description_hidden_text").css('display', 'none');
+            $(this_).parent().parent().find(".project_description_hidden_text").css('display', 'none');
             $(this_).text("SHOW MORE");
         }
     }
