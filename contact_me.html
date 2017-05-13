@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
 	<title>Nickolas Santiago - Contact Me</title>
     <link type="text/css" rel="stylesheet" href="styles/style_common.css" />
+    <link type="text/css" rel="stylesheet" href="styles/email_form_style.css" />
 </head>
 <body>
     <div id="header">
@@ -15,6 +16,19 @@
         </div>
     </div>
     <div id="content">
+        <div class="section_title">
+            <h3>Contact Me</h3>
+            <p>You can use the form below to email me at knicksantiago@gmail.com or follow me on one of the following sites:</p>
+            <hr>
+        </div>
+        <div class="section">
+             <form>
+                 Name: <br><input type="text" name="fullname" placeholder="Your Name" class="email_form_input email_form_input_box"><br>
+                 Email: <br><input type="text" name="email" placeholder="example@email.com" class="email_form_input email_form_input_box"><br>
+                 Message: <br><textarea name="message" rows=6 placeholder="Let me know what's on your mind." class="email_form_input_box"></textarea><br>
+                 <input type="submit" value="Send">
+             </form>
+        </div>
     </div>
 </body>
 </html>

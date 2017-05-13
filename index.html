@@ -3,8 +3,30 @@
 <head>
     <meta charset="utf-8" />
 	<title>Nickolas Santiago - Portfolio</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="scripts/index_scripts.js"></script>
     <link type="text/css" rel="stylesheet" href="styles/style_common.css" />
-    
+    <link type="text/css" rel="stylesheet" href="styles/email_form_style.css" />
+    <style>
+        .skill
+        {
+            width: 25%;
+            /*padding: 0 7.5%;*/
+            float: left;
+        }
+        .skill_text
+        {
+            padding: 0 7.5%;
+        }
+        .skill h3
+        {
+            text-align: center;
+        }
+        .skill p
+        {
+            text-align: justify;
+        }
+    </style>
 </head>
 <body>
     <div id="header">
@@ -22,22 +44,30 @@
         </div>
         <div class="section">
             <div class="skill">
-                <h3>Front-End Website Development</h3>
-                <p>I work closely with designers to translate their concepts and layouts into functional code.</p>
+                <div class="skill_text">
+                    <h3>Front-End Website Development</h3>
+                    <p>I work closely with designers to translate their concepts and layouts into functional code.</p>
+                 </div>
             </div>
             <div class="skill">
-                <h3>Interactive App Development</h3>
-                <p>I develop captivating interactive experiences to entertain or even educate users using 
-                       various JavaScript libraries including React, d3, and canvas.</p>
+                <div class="skill_text">
+                    <h3>Interactive App Development</h3>
+                    <p>I develop captivating interactive experiences to entertain or even educate users using 
+                           various JavaScript libraries including React, d3, and canvas.</p>
+                 </div>
             </div>
             <div class="skill">
-                <h3>Dynamic Web Development</h3>
-                <p>I have experience working with APIs and using AJAX to create dynamic web pages.</p>
+                <div class="skill_text">
+                    <h3>Dynamic Web Development</h3>
+                    <p>I have experience working with APIs and using AJAX to create dynamic web pages.</p>
+                 </div>
             </div>
             <div class="skill">
-                <h3>WordPress Customization</h3>
-                <p>I can customize your personal WordPress site to include your content and tweak themes to fit
-                       your personal style.</p>
+                <div class="skill_text">
+                    <h3>WordPress Customization</h3>
+                    <p>I can customize your personal WordPress site to include your content and tweak themes to fit
+                           your personal style.</p>
+                 </div>
             </div>
         </div>
         <div class="section_title">
@@ -49,10 +79,16 @@
         </div>
         <div class="section_title">
             <h3>Contact Me</h3>
-            <p>Use the form below to email me at knicksantiago@gmail.com.</p>
+            <p>You can use the form below to email me at knicksantiago@gmail.com.</p>
             <hr>
         </div>
         <div class="section">
+            <form>
+                 Name: <br><input type="text" name="fullname" placeholder="Your Name" class="email_form_input email_form_input_box"><br>
+                 Email: <br><input type="text" name="email" placeholder="example@email.com" class="email_form_input email_form_input_box"><br>
+                 Message: <br><textarea name="message" rows=6 placeholder="Let me know what's on your mind." class="email_form_input_box"></textarea><br>
+                 <input type="submit" value="Send">
+             </form>
         </div>
     </div>
 </body>
