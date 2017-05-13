@@ -17,7 +17,7 @@ $(document).ready(function(e)
         {
             for(var featured_project = 0; featured_project < featured_project_indexes.length; featured_project++)
             {
-                if(project == featured_projct_indexes[featured_project])
+                if(project == featured_project_indexes[featured_project])
                 {
                     //featured_projects.pusg(my_projects[project]);
                     featured_projects_html += drawSelectedProject(my_projects, project);
