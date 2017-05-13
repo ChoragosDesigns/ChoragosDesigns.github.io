@@ -72,7 +72,7 @@ function hideText(was_triggered, this_)
         }
     }
 }
-function changeCurrentImageGalleryImg(project_list, e_, this_)
+/*function changeCurrentImageGalleryImg(project_list, e_, this_)
 {
     if(e_.target.id != "image_gallery_icon_selected")
     {
@@ -82,4 +82,4 @@ function changeCurrentImageGalleryImg(project_list, e_, this_)
         $(this_).parent().parent().find(".project_image_gallery_img").attr("src", project_list[project_index].imgs[image_index].src);
         $(this_).parent().html(drawImageGalleryIcons(project_list[project_index].imgs, image_index));
     }
-}
+}*/
