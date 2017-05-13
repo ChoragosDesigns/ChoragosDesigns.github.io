@@ -3,6 +3,9 @@ body
     width: 100%;
     margin: 0;
     padding: 0;
+}
+body, textarea
+{
     font-family: sans-serif;
 }
 
@@ -80,6 +83,13 @@ body
 }
 .section
 {
-    margin: 0 7.5%;
+    /*width: 95%;
+    /*margin: 0 7.5%;*/
     padding: 35px 2.5%;
+    display: inline-block;
+}
+.section, input, textarea
+{
+    font-size: 14.5pt;
+    line-height: 145%;
 }
