@@ -65,6 +65,7 @@ $(document).ready(function()
 $(window).resize(function()
 {
     var new_inner_width= ($(window).innerWidth() - ($("#projects_section").css("padding-left") + $("#projects_section").css("padding-right")));
+    console.log(new_inner_width);
     console.log($("#projects_section").css("padding-left"));
     
     var new_thumbnail_dimensions = (new_inner_width/4);
