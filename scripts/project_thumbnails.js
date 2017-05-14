@@ -67,7 +67,7 @@ $(window).resize(function()
     var new_inner_width= (($(".section_title").width()) - ($("#projects_section").css("padding-left") + $("#projects_section").css("padding-right")));
     console.log($(window).innerWidth());
     console.log(new_inner_width);
-    console.log(($("#projects_section").css("padding-left") + $("#projects_section").css("padding-right")));
+    console.log(parseInt($("#projects_section").css("padding-left")) + parseInt($("#projects_section").css("padding-right")));
     
     var new_thumbnail_dimensions = (new_inner_width/4);
     var new_thumbnail_margin = (new_thumbnail_dimensions/6);
