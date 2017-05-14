@@ -19,10 +19,14 @@ $(document).ready(function(e)
             {
                 if(project == featured_project_indexes[featured_project])
                 {
-                    //featured_projects.pusg(my_projects[project]);
-                    featured_projects_html += drawSelectedProject(my_projects, project);
+                    featured_projects.push(my_projects[project]);
+                    //featured_projects_html += drawSelectedProject(my_projects, project);
                 }
             }
+        }
+        for(var featured_project = 0; featured_project < featured_projects.length; featured_project++)
+        {
+            featured_projects_html += drawSelectedProject(featured_projects, featured_project);
         }
         document.getElementById("featured_projects_section").innerHTML = featured_projects_html;
         hideText(false, null);
@@ -110,8 +114,16 @@ $(document).ready(function(e)
     {
         hideText(true, this);
     });
-    $("#projects_section").on("click", ".image_gallery_icon", function(e)
+    $("#featured_projects_section").on("click", ".image_gallery_icon", function(e)
     {
         //changeCurrentImageGalleryImg(my_projects, e, this);
+        if(e.target.id != "image_gallery_icon_selected")
+        {
+            var image_index = $(this).index();
+            var project_index = $(this).parent().parent().parent().parent().index(".project_content");
+            console.log($(this).parent().parent().parent().parent());
+            $(this).parent().parent().find(".project_image_gallery_img").attr("src", featured_projects[project_index].imgs[image_index].src);
+            $(this).parent().html(drawImageGalleryIcons(featured_projects[project_index].imgs, image_index));
+        }
     });
 });
