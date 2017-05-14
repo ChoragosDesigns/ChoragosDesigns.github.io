@@ -11,10 +11,10 @@ $(document).ready(function()
     {
         var myJSON = JSON.parse(xhr.responseText);
         my_projects = myJSON.projects;
-        var section_width = $(".content").width();
+        var section_width = (($(".section_title").width()) - (parseInt($("#projects_section").css("padding-left")) + parseInt($("#projects_section").css("padding-right"))));
         project_thumbnail_section_html += drawProjectThumbnail(my_projects, section_width);
         document.getElementById("projects_section").innerHTML = project_thumbnail_section_html;
-        //$("#projects_section").width(section_width);
+        $("#projects_section").width(section_width);
     }
     var url = "scripts/projects.json";
     xhr.open("GET", url, true);
@@ -59,12 +59,12 @@ $(document).ready(function()
     });
 });
 
-/*$(window).resize(function()
+$(window).resize(function()
 {
     var new_inner_width= (($(".section_title").width()) - (parseInt($("#projects_section").css("padding-left")) + parseInt($("#projects_section").css("padding-right"))));
     /*console.log($(window).innerWidth());
     console.log(new_inner_width);
-    console.log(parseInt($("#projects_section").css("padding-left")) + parseInt($("#projects_section").css("padding-right")));*
+    console.log(parseInt($("#projects_section").css("padding-left")) + parseInt($("#projects_section").css("padding-right")));*/
     
     var new_thumbnail_dimensions = (new_inner_width/4);
     var new_thumbnail_margin = (new_thumbnail_dimensions/6);
@@ -75,7 +75,7 @@ $(document).ready(function()
         $(this).height(new_thumbnail_dimensions);
         $(this).css("margin", "0 " + new_thumbnail_margin + "px " + new_thumbnail_margin + "px " + new_thumbnail_margin + "px ");
     });
-});*/
+});
 
 function drawProjectThumbnail(all_projects_array, section_width)
 {
