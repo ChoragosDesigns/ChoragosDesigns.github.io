@@ -64,7 +64,7 @@ $(document).ready(function()
 
 $(window).resize(function()
 {
-    var new_thumbnail_dimensions = ($(window).width()/4);
+    var new_thumbnail_dimensions = ($(window).innerWidth()/4);
     var new_thumbnail_margin = (new_thumbnail_dimensions/6);
     $(".project_thumbnail").each(function(i)
     {
