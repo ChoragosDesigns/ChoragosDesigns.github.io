@@ -558,7 +558,7 @@ function drawWordpressIcon(ctx, step)
     }
     
     ctx.drawImage(wordpress_logo, ((ctx.canvas.width/2) - (wordpress_logo_width/2)), ((ctx.canvas.height/2) - (wordpress_logo_width/2)), wordpress_logo_width, wordpress_logo_width); 
-    //ctx.drawImage(wordpress_logo, 10, 100, 100, 100); 
+    ctx.drawImage(wordpress_logo, 10, 10, 150, 100); 
 }
 
 
