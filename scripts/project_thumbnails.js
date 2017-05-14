@@ -66,6 +66,7 @@ $(window).resize(function()
 {
     var new_thumbnail_dimensions = ($(window).innerWidth()/4);
     var new_thumbnail_margin = (new_thumbnail_dimensions/6);
+    $("#projects_section").width($(window).innerWidth());
     $(".project_thumbnail").each(function(i)
     {
         $(this).width(new_thumbnail_dimensions);
