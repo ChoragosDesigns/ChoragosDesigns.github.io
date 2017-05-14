@@ -18,10 +18,10 @@ var is_dynamic_hovering = false;
 $(document).ready(function()
 {
     console.log("helloooo");
-    /*console.log("im ready im ready");
+    //*console.log("im ready im ready");
     var front_end_canvas = document.getElementById("icon_canvas_front_end");
     var front_end_canvas_context = front_end_canvas.getContext("2d");
-    var interactive_app_canvas = document.getElementById("icon_canvas_interactive_app");
+    /*var interactive_app_canvas = document.getElementById("icon_canvas_interactive_app");
     var interactive_app_context = interactive_app_canvas.getContext("2d");
     var dynamic_canvas = document.getElementById("icon_canvas_dynamic");
     var dynamic_canvas_context = dynamic_canvas.getContext("2d");*/
@@ -29,9 +29,9 @@ $(document).ready(function()
     var wordpress_context = wordpress_canvas.getContext("2d");
     
     //front_end_canvas_context.canvas.width = interactive_app_context.canvas.width = dynamic_canvas_context.canvas.width = wordpress_context.canvas.width = $(".skill").width();
-    wordpress_context.canvas.width = $(".skill").width();
+    front_end_canvas_context.canvas.width = wordpress_context.canvas.width = $(".skill").width();
     //front_end_canvas_context.canvas.height = interactive_app_context.canvas.height = dynamic_canvas_context.canvas.height = wordpress_context.canvas.height = ($(".skill").width() * 0.7);
-    wordpress_context.canvas.height = ($(".skill").width() * 0.7);
+    front_end_canvas_context.canvas.height = wordpress_context.canvas.height = ($(".skill").width() * 0.7);
     //$(".skill_icon_canvas")
     
     //top_canvas_context.canvas.width = main_canvas_context.canvas.width = $(document).width();
@@ -84,7 +84,7 @@ $(document).ready(function()
             }
         }, ((1500/100)));
     });
-    /*
+    
     drawFrontEndIcon(front_end_canvas_context, 0);
     $("#icon_canvas_front_end").on("mouseover", function(e)
     {
@@ -104,7 +104,7 @@ $(document).ready(function()
     
     
     
-    
+    /*
     
    //     var is_dynamic_animating = false;
 //var is_dynamic_hovering = false;
@@ -336,11 +336,28 @@ function drawFrontEndIcon(ctx, step)
     var mobile_divider = (pc_divider/1.7);
     
     //---Devices
-    var pc = new FrontEndObject(((ctx.canvas.width/2) - (ctx.canvas.width/7.5)), (ctx.canvas.height/2), (ctx.canvas.width/1.8), (ctx.canvas.height/2));
-    var pc_screen = new FrontEndObject(((ctx.canvas.width/2) - (ctx.canvas.width/7.5)), (ctx.canvas.height/2), (pc.width - (ctx.canvas.width * 0.045)), pc.height - (ctx.canvas.width * 0.045));
-    var mobile = new FrontEndObject(((ctx.canvas.width/2) + (ctx.canvas.width/7.5)), (ctx.canvas.height/5)*3.5, (ctx.canvas.width/5.25), (ctx.canvas.height/2.15));
-    var mobile_screen = new FrontEndObject(((ctx.canvas.width/2) + (ctx.canvas.width/7.5)), (ctx.canvas.height/5)*3.5, ((ctx.canvas.width/5.5) - (ctx.canvas.width * 0.045)), ((ctx.canvas.height/2.15) - (ctx.canvas.width * 0.045)));
-     
+    var pc = new FrontEndObject(
+        ((ctx.canvas.width * 0.05) + ((ctx.canvas.width/1.3)/2) + (ctx.canvas.height * 0.045) + (ctx.canvas.width * 0.007)),
+        ((ctx.canvas.height * 0.05) + (((ctx.canvas.height/2) * 1.3)/2) + (ctx.canvas.height * 0.022)),
+        (ctx.canvas.width/1.3), 
+        ((ctx.canvas.height/2) * 1.3));    
+    var pc_screen = new FrontEndObject(
+        ((ctx.canvas.width * 0.05) + ((pc.width - (ctx.canvas.width * 0.045))/2) + (ctx.canvas.height * 0.045) + ((ctx.canvas.height * 0.045)/2) + (ctx.canvas.width * 0.007) + ((ctx.canvas.width * 0.007)/2)),
+        ((ctx.canvas.height * 0.05) + ((pc.height - (ctx.canvas.width * 0.045))/2) + (ctx.canvas.height * 0.045) + ((ctx.canvas.width * 0.007)/2)),
+        (pc.width - (ctx.canvas.width * 0.045)), 
+        (pc.height - (ctx.canvas.width * 0.045)));
+
+    var mobile = new FrontEndObject(
+        (ctx.canvas.width - (ctx.canvas.width * 0.05) - ((ctx.canvas.width/6)/2) - (ctx.canvas.height * 0.045) - (ctx.canvas.width * 0.007)),
+        (ctx.canvas.height - (ctx.canvas.height * 0.05) - ((ctx.canvas.height/2.15)/2) - (ctx.canvas.height * 0.045) - (ctx.canvas.width * 0.007)),
+        (ctx.canvas.width/6), 
+        (ctx.canvas.height/2.15));
+    var mobile_screen = new FrontEndObject(
+        (ctx.canvas.width - (ctx.canvas.width * 0.05) - ((ctx.canvas.width/6)/2) - (ctx.canvas.height * 0.045) - (ctx.canvas.width * 0.007)),
+        (ctx.canvas.height - (ctx.canvas.height * 0.05) - (((ctx.canvas.height/2.15) - (ctx.canvas.width * 0.045))/2) - (ctx.canvas.width * 0.007) - ((ctx.canvas.width * 0.007)) - (ctx.canvas.width * 0.045)),
+        ((ctx.canvas.width/5.5) - (ctx.canvas.width * 0.045)), 
+        ((ctx.canvas.height/2.15) - (ctx.canvas.width * 0.045)));
+    
     //---Group 0
     var pc_group0_div0 = new FrontEndDiv((pc_screen.center_xpos - (pc_screen.width/2))+(pc_screen.width*step), (pc_screen.center_ypos - (pc_screen.height/2) + (ctx.canvas.height * 0.036)), (pc_screen.width-(pc_screen.width*step)), (pc_screen.height/4), "rgba(255, 0, 0, " + (1-step) + ")");
     var pc_group0_div1 = new FrontEndDiv((pc_screen.center_xpos - (pc_screen.width/2)), (pc_screen.center_ypos - (pc_screen.height/2) + (pc_screen.height/4) + ((ctx.canvas.height * 0.036) * 2)), (pc_screen.width/3) - ((pc_screen.width/3)*step ), (((pc_screen.height/4) * 3) - ((ctx.canvas.height * 0.036)*2)), "rgba(255, 0, 255, " + (1-step) + ")");
@@ -371,9 +388,12 @@ function drawFrontEndIcon(ctx, step)
         [mobile_group1_div0, mobile_group1_div1, mobile_group1_div2, mobile_group1_div3, mobile_group1_div4]
         ];
     
+    /*ctx.fillStyle = "purple";
+    ctx.fillRect((ctx.canvas.width*0.05), (ctx.canvas.height*0.05), ctx.canvas.width * 0.9, ctx.canvas.height * 0.9);
+    */
     //---Draw the PC screen and divs
     ctx.strokeStyle = "rgb(0,0,0)";
-    ctx.lineWidth = (ctx.canvas.width * 0.022);
+    ctx.lineWidth = (ctx.canvas.width * 0.014);
     ctx.fillStyle = "rgb(225, 225, 225)";
     drawDevice(ctx, pc);
     ctx.fillStyle = "rgb(255, 255, 255)";
@@ -507,39 +527,11 @@ function drawWordpressIcon(ctx, step)
     var canvas_height_midpoint = (ctx.canvas.height/2);
     var wordpress_logo = new Image();
     wordpress_logo.src = "wordpress_logo.png";
-    //wordpress_logo.src = "http://10steps.sg/wp-content/uploads//2012/06/cartoonize-a-picture-in-photoshop-7.jpg";
     var wordpress_logo_width = (ctx.canvas.width/3);
     
-    
-     var gear0 = new GearObject(
-        (ctx.canvas.width - (ctx.canvas.width * 0.05) - (((ctx.canvas.width/12) + (ctx.canvas.width * 0.093)) + (ctx.canvas.width * 0.031))), 
-        (ctx.canvas.height - (ctx.canvas.height * 0.05) - (((ctx.canvas.width/12) + (ctx.canvas.width * 0.093)) + (ctx.canvas.width * 0.031))), 
-        12, 
-        (ctx.canvas.width/12), ((ctx.canvas.width/12) + (ctx.canvas.width * 0.093)), 
-        (((ctx.canvas.width/12) + (ctx.canvas.width * 0.093)) + (ctx.canvas.width * 0.031)));
-    
-    
-    var gear1 = new GearObject(
-        ((ctx.canvas.width * 0.05) + ((ctx.canvas.width * 0.09) + (ctx.canvas.width*0.054) + (ctx.canvas.width*0.018))),
-        ((ctx.canvas.width/9) * 4.15), 
-        9, 
-        (ctx.canvas.width * 0.09), 
-        ((ctx.canvas.width * 0.09) + (ctx.canvas.width*0.054)),  
-        ((ctx.canvas.width * 0.09) + (ctx.canvas.width*0.054) + (ctx.canvas.width*0.018)) );
-    
-    
-    var gear2 = new GearObject(
-        ((ctx.canvas.width/7)*2.6),
-        ((ctx.canvas.width * 0.05) + ((ctx.canvas.width * 0.09) + (ctx.canvas.width*0.054) + (ctx.canvas.width*0.018))), 
-        //0,
-        9, 
-        (ctx.canvas.width * 0.09), 
-        ((ctx.canvas.width * 0.09) + (ctx.canvas.width*0.054)), 
-        ((ctx.canvas.width * 0.09) + (ctx.canvas.width*0.054) + (ctx.canvas.width*0.018)));
-    
-    
-    
-    
+    var gear0 = new GearObject((ctx.canvas.width - (ctx.canvas.width * 0.05) - (((ctx.canvas.width/12) + (ctx.canvas.width * 0.093)) + (ctx.canvas.width * 0.031))), (ctx.canvas.height - (ctx.canvas.height * 0.05) - (((ctx.canvas.width/12) + (ctx.canvas.width * 0.093)) + (ctx.canvas.width * 0.031))), 12, (ctx.canvas.width/12), ((ctx.canvas.width/12) + (ctx.canvas.width * 0.093)), (((ctx.canvas.width/12) + (ctx.canvas.width * 0.093)) + (ctx.canvas.width * 0.031)));
+    var gear1 = new GearObject(((ctx.canvas.width * 0.05) + ((ctx.canvas.width * 0.09) + (ctx.canvas.width*0.054) + (ctx.canvas.width*0.018))), ((ctx.canvas.width/9) * 4.15), 9, (ctx.canvas.width * 0.09), ((ctx.canvas.width * 0.09) + (ctx.canvas.width*0.054)), ((ctx.canvas.width * 0.09) + (ctx.canvas.width*0.054) + (ctx.canvas.width*0.018)) );
+    var gear2 = new GearObject(((ctx.canvas.width/7)*2.6), ((ctx.canvas.width * 0.05) + ((ctx.canvas.width * 0.09) + (ctx.canvas.width*0.054) + (ctx.canvas.width*0.018))), 9, (ctx.canvas.width * 0.09), ((ctx.canvas.width * 0.09) + (ctx.canvas.width*0.054)), ((ctx.canvas.width * 0.09) + (ctx.canvas.width*0.054) + (ctx.canvas.width*0.018)));
     var outer_gear = new GearObject((ctx.canvas.width/2), (ctx.canvas.height/2), 7, (((ctx.canvas.width/3)/2) - (ctx.canvas.width * 0.013)),  ((((ctx.canvas.width/3)/2) - (ctx.canvas.width * 0.013)) + (ctx.canvas.width * 0.034)), (((((ctx.canvas.width/3)/2) - (ctx.canvas.width * 0.013)) + (ctx.canvas.width * 0.034)) + (ctx.canvas.width * 0.030)));
     var gears = [gear0, gear1, gear2, outer_gear];
     
@@ -558,9 +550,7 @@ function drawWordpressIcon(ctx, step)
                  drawGear(ctx, gears[g], step);
             }
         }
-        
         ctx.drawImage(wordpress_logo, ((ctx.canvas.width/2) - (wordpress_logo_width/2)), ((ctx.canvas.height/2) - (wordpress_logo_width/2)), wordpress_logo_width, wordpress_logo_width); 
-        ctx.drawImage(wordpress_logo, 10, 10, 150, 100); 
     }
 }
 
