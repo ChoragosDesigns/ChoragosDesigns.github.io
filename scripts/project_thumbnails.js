@@ -64,12 +64,13 @@ $(document).ready(function()
 
 $(window).resize(function()
 {
-    console.log("hello");
-    console.log($(window).width());
     var new_thumbnail_dimensions = ($(window).width()/4);
+    var new_thumbnail_margin = (new_thumbnail_dimensions/6);
     $(".project_thumbnail").each(function(i)
     {
         $(this).width(new_thumbnail_dimensions);
+        $(this).height(new_thumbnail_dimensions);
+        $(this).css("margin", "0 " + new_thumbnail_margin + "px " + new_thumbnail_margin + "px " + new_thumbnail_margin + "px ");
     });
 });
 
