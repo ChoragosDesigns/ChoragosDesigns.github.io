@@ -72,14 +72,24 @@ function hideText(was_triggered, this_)
         }
     }
 }
-/*function changeCurrentImageGalleryImg(project_list, e_, this_)
+function changeCurrentImageGalleryImg(project_list, e_, this_)
 {
-    if(e_.target.id != "image_gallery_icon_selected")
+    /*if(e_.target.id != "image_gallery_icon_selected")
     {
         var image_index = $(this_).index();
         var project_index = $(this_).parent().parent().parent().parent().index(".project_content");
         console.log($(this_).parent().parent().parent().parent());
         $(this_).parent().parent().find(".project_image_gallery_img").attr("src", project_list[project_index].imgs[image_index].src);
         $(this_).parent().html(drawImageGalleryIcons(project_list[project_index].imgs, image_index));
+    }*/
+    if(e_.target.id != "image_gallery_icon_selected")
+    {
+        var image_index = $(this_).index();
+        var project_index = $(this_).parent().parent().parent().index();
+        console.log($(this_).parent().parent().parent());
+        console.log(image_index);
+        console.log(project_index);
+        $(this_).parent().parent().find(".project_image_gallery_img").attr("src", project_list[project_index].imgs[image_index].src);
+        $(this_).parent().html(drawImageGalleryIcons(project_list[project_index].imgs, image_index));
     }
-}*/
+}
