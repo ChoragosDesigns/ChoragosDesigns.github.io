@@ -65,11 +65,6 @@ $(document).ready(function()
     });
     $("#projects_section").on("click", ".image_gallery_icon", function(e)
     {
-        //changeCurrentImageGalleryImg(my_projects, e, this);
-    });
-    
-    $("#featured_projects_section").on("click", ".image_gallery_icon", function(e)
-    {
         if(e.target.id != "image_gallery_icon_selected")
         {
             var image_index = $(this).index();
