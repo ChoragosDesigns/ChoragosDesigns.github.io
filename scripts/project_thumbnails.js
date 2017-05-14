@@ -19,6 +19,8 @@ $(document).ready(function()
         $(".project_thumbnail").each(function(i)
         {
             $(this).width($("#projects_section").width()/4);
+            $(this).height($("#projects_section").width()/4);
+            $(this).css("margin", "0 " + (($("#projects_section").width()/4)/6) + "px " + (($("#projects_section").width()/4)/6) + "px " + (($("#projects_section").width()/4)/6) + "px ");
         });
         
         
