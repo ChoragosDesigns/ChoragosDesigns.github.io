@@ -16,7 +16,10 @@ $(document).ready(function()
         document.getElementById("projects_section").innerHTML = project_thumbnail_section_html;
         console.log($("#projects_section").width());
         
-        
+        $(".project_thumbnail").each(function(i)
+        {
+            $(this).width($("#projects_section").width()/4);
+        });
         
         
         
