@@ -2,7 +2,6 @@
 
 $(document).ready(function()
 {
-    console.log("hello worlld");
     var my_projects = [];
     var selected_project;
     var project_thumbnail_section_html = document.getElementById("projects_section").innerHTML;
@@ -10,14 +9,12 @@ $(document).ready(function()
     var xhr = new XMLHttpRequest();
     xhr.onload = function()
     {
-        console.log("hello earth");
         var myJSON = JSON.parse(xhr.responseText);
         my_projects = myJSON.projects;
         var section_width = $("#projects_section").width();
         project_thumbnail_section_html += drawProjectThumbnail(my_projects, section_width);
         document.getElementById("projects_section").innerHTML = project_thumbnail_section_html;
         $("#projects_section").width(section_width);
-        console.log(project_thumbnail_section_html);
     }
     var url = "scripts/projects.json";
     xhr.open("GET", url, true);
@@ -62,12 +59,12 @@ $(document).ready(function()
     });
 });
 
-$(window).resize(function()
+/*$(window).resize(function()
 {
     var new_inner_width= (($(".section_title").width()) - (parseInt($("#projects_section").css("padding-left")) + parseInt($("#projects_section").css("padding-right"))));
     /*console.log($(window).innerWidth());
     console.log(new_inner_width);
-    console.log(parseInt($("#projects_section").css("padding-left")) + parseInt($("#projects_section").css("padding-right")));*/
+    console.log(parseInt($("#projects_section").css("padding-left")) + parseInt($("#projects_section").css("padding-right")));*
     
     var new_thumbnail_dimensions = (new_inner_width/4);
     var new_thumbnail_margin = (new_thumbnail_dimensions/6);
@@ -78,7 +75,7 @@ $(window).resize(function()
         $(this).height(new_thumbnail_dimensions);
         $(this).css("margin", "0 " + new_thumbnail_margin + "px " + new_thumbnail_margin + "px " + new_thumbnail_margin + "px ");
     });
-});
+});*/
 
 function drawProjectThumbnail(all_projects_array, section_width)
 {
