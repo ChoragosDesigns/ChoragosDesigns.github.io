@@ -14,12 +14,20 @@ $(document).ready(function()
         var section_width = (($(".section_title").width()) - (parseInt($("#projects_section").css("padding-left")) + parseInt($("#projects_section").css("padding-right"))));
         project_thumbnail_section_html += drawProjectThumbnail(my_projects, section_width);
         document.getElementById("projects_section").innerHTML = project_thumbnail_section_html;
-        $(".project_thumbnail").each(function(i)
+        
+        
+        
+        
+        
+        
+        
+        
+        /*$(".project_thumbnail").each(function(i)
         {
             $(this).width(new_thumbnail_dimensions);
             $(this).height(new_thumbnail_dimensions);
             $(this).css("margin", "0 " + new_thumbnail_margin + "px " + new_thumbnail_margin + "px " + new_thumbnail_margin + "px ");
-        });
+        });*/
         //$("#projects_section").width(section_width);
     }
     var url = "scripts/projects.json";
