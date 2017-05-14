@@ -47,7 +47,6 @@ var CharacterListComponent = React.createClass({
                 <CharacterListItemComponent key={character.id} character={character} />
             );
         });
-        console.log(items);
         return (
             <div>
                 {my_characters}
