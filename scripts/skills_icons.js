@@ -544,7 +544,7 @@ function drawWordpressIcon(ctx, step)
     var gears = [gear0, gear1, gear2, outer_gear];
     
     ctx.fillStyle = "rgb(255, 255, 255)";
-    /*ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     for(var g = 0; g < gears.length; g++)
     {
         if(g == 1)
@@ -555,10 +555,10 @@ function drawWordpressIcon(ctx, step)
         {
              drawGear(ctx, gears[g], step);
         }
-    }*/
+    }
     
-    //ctx.drawImage(wordpress_logo, ((ctx.canvas.width/2) - (wordpress_logo_width/2)), ((ctx.canvas.height/2) - (wordpress_logo_width/2)), wordpress_logo_width, wordpress_logo_width); 
-    ctx.drawImage(wordpress_logo, 10, 100, 100, 100); 
+    ctx.drawImage(wordpress_logo, ((ctx.canvas.width/2) - (wordpress_logo_width/2)), ((ctx.canvas.height/2) - (wordpress_logo_width/2)), wordpress_logo_width, wordpress_logo_width); 
+    //ctx.drawImage(wordpress_logo, 10, 100, 100, 100); 
 }
 
 
