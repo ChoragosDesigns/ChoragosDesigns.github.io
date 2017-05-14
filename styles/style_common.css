@@ -15,7 +15,7 @@ body, textarea
 {
     width: 100%;
     position: fixed;
-    z-index: 3;
+    z-index: 4;
     background-color: orange;
 }
 #header a
@@ -87,8 +87,9 @@ body, textarea
     /*margin: 0 7.5%;*/
     padding: 35px 2.5%;
 }
-.section, input, textarea
+.section, input, textarea, #my_div
 {
-    font-size: 14.5pt;
+    margin: 8.5pt 0;
+    font-size: 15.5pt;
     line-height: 145%;
 }
