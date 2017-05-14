@@ -65,6 +65,7 @@ $(document).ready(function()
 $(window).resize(function()
 {
     var new_inner_width= ($(window).innerWidth() - ($("#projects_section").css("padding-left") + $("#projects_section").css("padding-right")));
+    console.log($(window).innerWidth());
     console.log(new_inner_width);
     console.log($("#projects_section").css("padding-left"));
     
