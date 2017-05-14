@@ -106,7 +106,7 @@ $(document).ready(function(e)
     xhr.setRequestHeader("If-Modified-Since", "Mon, 3 Apr 2017 00:00:00 EST");
     xhr.send();
     
-    $("#projects_section").on("click", ".project_description_button", function(e)
+    $("#featured_projects_section").on("click", ".project_description_button", function(e)
     {
         hideText(true, this);
     });
