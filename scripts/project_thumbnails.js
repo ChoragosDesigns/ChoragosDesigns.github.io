@@ -62,6 +62,11 @@ $(document).ready(function()
     });
 });
 
+$(document).resize(function()
+{
+    console.log("hello");
+});
+
 function drawProjectThumbnail(all_projects_array, section_width)
 {
     var thumbnail_dimensions = (section_width/4);
