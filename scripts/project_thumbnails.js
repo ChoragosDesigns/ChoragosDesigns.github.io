@@ -62,7 +62,7 @@ $(document).ready(function()
     });
 });
 
-$(document).resize(function()
+$(window).resize(function()
 {
     console.log("hello");
 });
