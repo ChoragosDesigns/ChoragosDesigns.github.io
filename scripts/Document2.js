@@ -2,34 +2,21 @@
 
 $(document).ready(function()
 {
-    console.log("Canvas ready");
     var d = new Date();
     var n = d.getHours();
-    
-    console.log(n);
+    var grd;
     var main_canvas = document.getElementById("my_div_canvas");
     var main_canvas_context = main_canvas.getContext('2d');
-    if($("#my_div").height() < $("#my_div_content").height())
+    if($("#my_div").height() < ($("#my_div_content").height() + parseInt($("#my_div_content").css("margin-top")) + parseInt($("#my_div_content").css("margin-bottom"))))
     {
-        console.log("heloooooo");
-        $("#my_div").height($("#my_div_content").height());
+        $("#my_div").height($("#my_div_content").height() + parseInt($("#my_div_content").css("margin-top")) + parseInt($("#my_div_content").css("margin-bottom")));
     }
+    
     main_canvas_context.canvas.width = $("#my_div").width();
     main_canvas_context.canvas.height = ($("#my_div").height());
-    //main_canvas_context.canvas.height = ($("#my_div").height() - $("#header").height());
-    
-    
-    console.log($("#my_div_content").height());
-    console.log($("#my_div").height());
-    /*if($("#my_div").height() < $("#my_div_content").height())
-    {
-        console.log("heloooooo");
-        $("#my_div").width("10px");
-    }*/
-    
-    
-    var grd=main_canvas_context.createLinearGradient(0,0,0,main_canvas_context.canvas.height);
+    grd=main_canvas_context.createLinearGradient(0,0,0,main_canvas_context.canvas.height);
   
+    
     if(n >= 0 && n < 12)
     {
         if(n >= 0 && n < 4)
