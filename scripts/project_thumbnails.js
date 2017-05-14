@@ -65,6 +65,11 @@ $(document).ready(function()
 $(window).resize(function()
 {
     console.log("hello");
+    console.log($(window).width());
+    /*$(".project_thumbnail").each(function(i)
+    {
+        $(this).width()
+    });*/
 });
 
 function drawProjectThumbnail(all_projects_array, section_width)
