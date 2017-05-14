@@ -64,10 +64,10 @@ $(document).ready(function()
 
 $(window).resize(function()
 {
-    //var new_inner_width= $(window).innerWidth() - ($("#))
+    var new_inner_width= ($(window).innerWidth() - ($("#projects_section").css("padding-left") + $("#projects_section").css("padding-right")));
     console.log($("#projects_section").css("padding-left"));
     
-    var new_thumbnail_dimensions = ($(window).innerWidth()/4);
+    var new_thumbnail_dimensions = (new_inner_width/4);
     var new_thumbnail_margin = (new_thumbnail_dimensions/6);
     $("#projects_section").width($(window).innerWidth());
     $(".project_thumbnail").each(function(i)
