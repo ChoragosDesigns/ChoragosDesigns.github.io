@@ -22,16 +22,16 @@ $(document).ready(function()
     var front_end_canvas = document.getElementById("icon_canvas_front_end");
     var front_end_canvas_context = front_end_canvas.getContext("2d");
     /*var interactive_app_canvas = document.getElementById("icon_canvas_interactive_app");
-    var interactive_app_context = interactive_app_canvas.getContext("2d");
-    var dynamic_canvas = document.getElementById("icon_canvas_dynamic");
-    var dynamic_canvas_context = dynamic_canvas.getContext("2d");*/
+    var interactive_app_context = interactive_app_canvas.getContext("2d");*/
+    var dynamic_canvas = document.getElementById("icon_canvas_dynamic_dev");
+    var dynamic_canvas_context = dynamic_canvas.getContext("2d");
     var wordpress_canvas = document.getElementById("icon_canvas_wordpress");
     var wordpress_context = wordpress_canvas.getContext("2d");
     
     //front_end_canvas_context.canvas.width = interactive_app_context.canvas.width = dynamic_canvas_context.canvas.width = wordpress_context.canvas.width = $(".skill").width();
-    front_end_canvas_context.canvas.width = wordpress_context.canvas.width = $(".skill").width();
+    front_end_canvas_context.canvas.width = dynamic_canvas_context.canvas.width = wordpress_context.canvas.width = $(".skill").width();
     //front_end_canvas_context.canvas.height = interactive_app_context.canvas.height = dynamic_canvas_context.canvas.height = wordpress_context.canvas.height = ($(".skill").width() * 0.7);
-    front_end_canvas_context.canvas.height = wordpress_context.canvas.height = ($(".skill").width() * 0.7);
+    front_end_canvas_context.canvas.height = dynamic_canvas_context.canvas.height = wordpress_context.canvas.height = ($(".skill").width() * 0.7);
     //$(".skill_icon_canvas")
     
     //top_canvas_context.canvas.width = main_canvas_context.canvas.width = $(document).width();
@@ -64,12 +64,12 @@ $(document).ready(function()
        {
             gear_rotation_step = (gear_rotation_step_control_int/100);
             drawWordpressIcon(wordpress_context, gear_rotation_step);
-            gear_rotation_step_control_int = gear_rotation_step_control_int + 1;
+            gear_rotation_step_control_int = gear_rotation_step_control_int + 10;
             $("#icon_canvas_wordpress").on("mouseout", function(e)
             {
                 stoppa(gear_updater);
             });
-        }, ((1500/100)));
+        }, ((700/100)));
     });
     $("#icon_canvas_wordpress").on("mouseout", function(e)
     {
@@ -77,12 +77,12 @@ $(document).ready(function()
        {
             gear_rotation_step = (gear_rotation_step_control_int/100);
             drawWordpressIcon(wordpress_context, gear_rotation_step);
-            gear_rotation_step_control_int = gear_rotation_step_control_int + 1;
+            gear_rotation_step_control_int = gear_rotation_step_control_int + 10;
             if(gear_rotation_step%1 == 0)
             {
                 stoppa(gear_updater);
             }
-        }, ((1500/100)));
+        }, ((700/100)));
     });
     
     drawFrontEndIcon(front_end_canvas_context, 0);
@@ -104,161 +104,170 @@ $(document).ready(function()
     
     
     
-    /*
+    
     
    //     var is_dynamic_animating = false;
 //var is_dynamic_hovering = false;
     
-    drawDynamicIcon(dynamic_canvas_context, 0, 0);
-    $("#icon_canvas_dynamic").on("mouseover", function(e)
+    drawDynamicIcon(dynamic_canvas_context, 0, 0, false);
+    $("#icon_canvas_dynamic_dev").on("mouseover", function(e)
     {
         is_dynamic_hovering = true;
         if(is_dynamic_animating == false)
         {
             is_dynamic_animating = true;
-            dynamicInterval(dynamic_canvas_context)
+            dynamicInterval(dynamic_canvas_context, false)
         }
-    });*/
+    });
     
 });
 
-function dynamicInterval(ctx)
+function dynamicInterval(ctx, is_rendering)
 {
     var a = 0;
     var interval = setInterval(function()
     {
-        //console.log("helllooooo");
-        var ys = a * 3;
-        drawDynamicIcon(ctx, 0, ys);
-        a = a + 1;
-        /*if(is_rendering == false)
+        if(is_rendering == false)
         {
-            var s = (a/100);
-            a = a + 2;
-            drawFrontEndIcon(ctx, s);
-        }
-        else
-        {
-            var s = ((100 - a)/100);
-            a =  a + 2;
-            drawFrontEndIcon(ctx, s);
-        }
-        if(a == 100)
-        {
-            clearFrontEndInterval(ctx, interval, is_rendering);
-        }*/
-    }, 750/100);   
-}
-
-function drawDynamicIcon(ctx, xstep, ystep)
-{
-    var icon_y_offset = 20;
-    
-    ctx.fillStyle = "rgb(255, 0, 0)";
-    ctx.fillRect(0 , 0, ctx.canvas.width, ctx.canvas.height);
-    ctx.fillStyle = "rgb(255, 255, 0)";
-    ctx.lineWidth = 5;
-    ctx.strokeStyle = "rgb(0,0,0)";
-    ctx.fillRect(((ctx.canvas.width/2) - ((ctx.canvas.width * 0.8)/2)), icon_y_offset, (ctx.canvas.width * 0.8), (ctx.canvas.height/3.75));
-    ctx.strokeRect(((ctx.canvas.width/2) - ((ctx.canvas.width * 0.8)/2)), icon_y_offset, (ctx.canvas.width * 0.8), (ctx.canvas.height/3.75));
-    
-    
-    ctx.fillStyle = "rgba(255, 255, 0, " + (1 - ((ystep/3)/25)) + ")";
-    ctx.strokeStyle = "rgba(0, 0, 0, " + (1 - ((ystep/3)/25)) + ")";
-    for(var b = 0; b < 3; b++)
-    {
-        var dynamic_box_width = (ctx.canvas.width * 0.6);   
-        var dynamic_box_height = (ctx.canvas.height * 0.11);
-        var dynamic_box_xoffset = ctx.canvas.width * 0.45;
-        var dynamic_box_yoffset = ((ctx.canvas.height - (ctx.canvas.height/3.75) - (icon_y_offset*2) - (25*3))/3);
-        var dynamic_box_ypos = (icon_y_offset + (ctx.canvas.height/3.75) + dynamic_box_yoffset + (b*(dynamic_box_height + dynamic_box_yoffset)) + ystep);
-        if(b%2 != 0)
-        {
-            var dynamic_box_xpos = ((ctx.canvas.width/2) + (dynamic_box_width/2) + (dynamic_box_xoffset*xstep));
-            dynamic_box_width = dynamic_box_width * -1;
-        }
-        else
-        {
-            var dynamic_box_xpos = ((ctx.canvas.width/2) - (dynamic_box_width/2) - (dynamic_box_xoffset*xstep));
-        }
-            
-        
-            
-            
-            
-            
-        ctx.strokeRect(dynamic_box_xpos, dynamic_box_ypos, dynamic_box_width, dynamic_box_height);
-        ctx.fillRect(dynamic_box_xpos, dynamic_box_ypos, dynamic_box_width, dynamic_box_height);
-        
-        
-        //((ctx.canvas.width/2) + (dynamic_box_width/2) + (offset_x * step)),
-       // (icon_y_offset + (ctx.canvas.height/3.75) + offset_y+ (b * (height + offset_y))), 
-        
-        
-        
-        
-        
-      //  (dynamic_box_width * -1), height);
-            
-        
-        
-        
-        
-        
-        /*
-        
-        
-        var dynamic_box_width = (ctx.canvas.width * 0.6);
-        console.log(ctx.canvas.height - (ctx.canvas.height/3.75) - 40 - (25*3));
-        
-        
-        
-        
-        
-        
-        var height = 25;
-        var offset_y = ((ctx.canvas.height - (ctx.canvas.height/3.75) - 40 - (25*3))/3);
-        var offset_x = ctx.canvas.width * 0.45;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        /*if(b%2 != 0)
-        {
-            ctx.strokeRect(((ctx.canvas.width/2) + (dynamic_box_width/2) + (offset_x * step)), (icon_y_offset + (ctx.canvas.height/3.75) + offset_y+ (b * (height + offset_y))), (dynamic_box_width * -1), height);     
-            ctx.fillRect(((ctx.canvas.width/2) + (dynamic_box_width/2) + (offset_x * step)), (icon_y_offset + (ctx.canvas.height/3.75) + offset_y+ (b * (height + offset_y))), (dynamic_box_width * -1), height);
-            ctx.fillStyle = "rgb(210, 210, 210)";
-            for(var l = 0; l < 1; l++)
+            var ys = a * 3;
+            drawDynamicIcon(ctx, 0, ys, false);
+            a = a + 1;
+            if(a == 100)
             {
-                ctx.fillRect(((ctx.canvas.width/2) + (dynamic_box_width/2) + (offset_x * step)), (icon_y_offset + (ctx.canvas.height/3.75) + offset_y+ (b * (height + offset_y))), (dynamic_box_width * -0.8), (height/5));
+                clearDynamicInterval(ctx, interval, true)
             }
         }
+        if(is_rendering == true)
+        {
+            
+        }
+    }, 750/100);
+}
+function clearDynamicInterval(ctx, updater, is_rendering)
+{
+    clearInterval(updater);
+    console.log("hello");
+    if(is_rendering == true)
+    {
+        
+    }
+    /*if(is_rendering == false)
+    {
+        setTimeout(function()
+        {
+            if(current_front_end_group == 0)
+            {
+                current_front_end_group = 1;
+            }
+            else
+            {
+                current_front_end_group = 0;
+            }
+            frontEndIconIterval(ctx, true);
+        }, 300);
+    }
+    else
+    {
+        if(front_end_hovering == true)
+        {
+            setTimeout(function()
+            {
+                frontEndIconIterval(ctx, false);
+            }, 3500);
+        }
         else
         {
-            ctx.strokeRect(((ctx.canvas.width/2) - (dynamic_box_width/2) - (offset_x * step)), (icon_y_offset + (ctx.canvas.height/3.75) + offset_y+ (b * (height + offset_y))), dynamic_box_width, height);
-            ctx.fillRect(((ctx.canvas.width/2) - (dynamic_box_width/2) - (offset_x * step)), (icon_y_offset + (ctx.canvas.height/3.75) + offset_y+ (b * (height + offset_y))), dynamic_box_width, height);
-        }*/
-        
-        
-        
-        
-        
-        
-        
-        ///ctx.strokeRect(((ctx.canvas.width/2) - (dynamic_box_width/2) - (offset_x * step)), (icon_y_offset + (ctx.canvas.height/3.75) + offset_y+ (b * (height + offset_y))), dynamic_box_width, height);
-        //ctx.fillRect(((ctx.canvas.width/2) - (dynamic_box_width/2) - (offset_x * step)), (icon_y_offset + (ctx.canvas.height/3.75) + offset_y+ (b * (height + offset_y))), dynamic_box_width, height);
+            is_front_end_animating = false;
+        }
+    }*/
+}
+
+function drawDynamicIcon(ctx, xstep, ystep, is_rendering_boxes)
+{
+    ctx.fillStyle = "rgb(255, 255, 255)";
+    ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    /*ctx.fillStyle = "rgb(255, 0, 0)";
+    ctx.fillRect(0,0, ctx.canvas.width, ctx.canvas.height);
+    ctx.fillStyle = "rgb(255, 0, 255)";
+    ctx.fillRect((ctx.canvas.width * 0.05) , (ctx.canvas.height * 0.05), ctx.canvas.width*0.9, ctx.canvas.height * 0.9);*/
+    
+    
+    
+    ctx.fillStyle = "rgb(227, 227, 227)";
+    ctx.strokeStyle = "rgb(0,0,0)";
+    ctx.lineWidth = (ctx.canvas.width * 0.014);
+    
+    ctx.strokeRect(
+        ((ctx.canvas.width * 0.05) + ((ctx.canvas.width * 0.014)/2)), 
+        ((ctx.canvas.height * 0.05) + ((ctx.canvas.width * 0.014)/2)), 
+        (ctx.canvas.width * 0.9) - (ctx.canvas.width * 0.014), 
+        (ctx.canvas.height/3.75));
+    
+    ctx.fillRect(
+        ((ctx.canvas.width * 0.05) + ((ctx.canvas.width * 0.014)/2)), 
+        ((ctx.canvas.height * 0.05) + ((ctx.canvas.width * 0.014)/2)), 
+        (ctx.canvas.width * 0.9) - (ctx.canvas.width * 0.014), 
+        (ctx.canvas.height/3.75));
+    
+    
+    //ctx.fillStyle = "rgba(255, 255, 0, " + (1 - ((ystep/3)/25)) + ")";
+    /*ctx.fillStyle = "rgba(227, 227, 227, " + (1 - ((ystep/3)/25)) + ")";
+    ctx.strokeStyle = "rgba(0, 0, 0, " + (1 - ((ystep/3)/25)) + ")";*/
+    if(is_rendering_boxes == false)
+    {
+        ctx.fillStyle = "rgba(227, 227, 227, " + (1 - ((ystep/3)/25)) + ")";
+        ctx.strokeStyle = "rgba(0, 0, 0, " + (1 - ((ystep/3)/25)) + ")";
+        for(var b = 0; b < 3; b++)
+        {
+            drawDynamicBoxes(ctx, b, xstep, ystep);
+            /*var dynamic_box_width = (ctx.canvas.width * 0.6);   
+            var dynamic_box_height = (ctx.canvas.height * 0.15);
+            var dynamic_box_xoffset = ctx.canvas.width * 0.45;
+            var dynamic_box_yoffset = (((ctx.canvas.height * 0.9) - ((ctx.canvas.height/3.75) + ((ctx.canvas.width * 0.014)/2)) - (dynamic_box_height * 3))/3);
+            var dynamic_box_ypos = ((ctx.canvas.height * 0.05) + (ctx.canvas.height/3.75) + dynamic_box_yoffset + (b*(dynamic_box_height + dynamic_box_yoffset)) + ystep);
+            
+            if(b%2 != 0)
+            {
+                var dynamic_box_xpos = ((ctx.canvas.width/2) + (dynamic_box_width/2) + (dynamic_box_xoffset*xstep));
+                dynamic_box_width = dynamic_box_width * -1;
+            }
+            else
+            {
+                var dynamic_box_xpos = ((ctx.canvas.width/2) - (dynamic_box_width/2) - (dynamic_box_xoffset*xstep));
+            }
+            ctx.strokeRect(dynamic_box_xpos, dynamic_box_ypos, dynamic_box_width, dynamic_box_height);
+            ctx.fillRect(dynamic_box_xpos, dynamic_box_ypos, dynamic_box_width, dynamic_box_height);*/
+           
+        }
+    }
+    else
+    {
         
     }
     
     
     
-    
    // ctx.fillRect(((ctx.canvas.width/2) - ((ctx.canvas.width * 0.9)/2)), 20, 20, 20);
+}
+function drawDynamicBoxes(ctx, box_index, xstep, ystep)
+{
+    var dynamic_box_width = (ctx.canvas.width * 0.6);   
+    var dynamic_box_height = (ctx.canvas.height * 0.15);
+    var dynamic_box_xoffset = ctx.canvas.width * 0.45;
+    var dynamic_box_yoffset = (((ctx.canvas.height * 0.9) - ((ctx.canvas.height/3.75) + ((ctx.canvas.width * 0.014)/2)) - (dynamic_box_height * 3))/3);
+    var dynamic_box_ypos = ((ctx.canvas.height * 0.05) + (ctx.canvas.height/3.75) + dynamic_box_yoffset + (box_index*(dynamic_box_height + dynamic_box_yoffset)) + ystep);
+    
+    if(box_index%2 != 0)
+    {
+        var dynamic_box_xpos = ((ctx.canvas.width/2) + (dynamic_box_width/2) + (dynamic_box_xoffset*xstep));
+        dynamic_box_width = dynamic_box_width * -1;
+    }
+    else
+    {
+        var dynamic_box_xpos = ((ctx.canvas.width/2) - (dynamic_box_width/2) - (dynamic_box_xoffset*xstep));
+    }
+    ctx.strokeRect(dynamic_box_xpos, dynamic_box_ypos, dynamic_box_width, dynamic_box_height);
+    ctx.fillRect(dynamic_box_xpos, dynamic_box_ypos, dynamic_box_width, dynamic_box_height);
 }
 
 
