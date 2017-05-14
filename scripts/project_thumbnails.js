@@ -64,6 +64,9 @@ $(document).ready(function()
 
 $(window).resize(function()
 {
+    //var new_inner_width= $(window).innerWidth() - ($("#))
+    console.log($("#projects_section").css("padding-left"));
+    
     var new_thumbnail_dimensions = ($(window).innerWidth()/4);
     var new_thumbnail_margin = (new_thumbnail_dimensions/6);
     $("#projects_section").width($(window).innerWidth());
