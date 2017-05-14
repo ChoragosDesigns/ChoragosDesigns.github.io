@@ -54,6 +54,7 @@ $(document).ready(function()
         test(this);
         var selected_project_index = $(this).index();
         var selected_project_html = "";
+        selected_project = selected_project_index;
         selected_project_html += drawSelectedProject(my_projects, selected_project_index);
         selected_project_html +="<p id='more_projects_button'><u>Go Back</u></p>";
         document.getElementById("projects_section").innerHTML = selected_project_html;
@@ -70,8 +71,8 @@ $(document).ready(function()
             var image_index = $(this).index();
             var project_index = $(this).parent().parent().parent().index(".project_content");
             console.log(project_index);
-            $(this).parent().parent().find(".project_image_gallery_img").attr("src", my_projects[project_index].imgs[image_index].src);
-            $(this).parent().html(drawImageGalleryIcons(my_projects[project_index].imgs, image_index));
+            $(this).parent().parent().find(".project_image_gallery_img").attr("src", my_projects[selected_project_index].imgs[image_index].src);
+            $(this).parent().html(drawImageGalleryIcons(my_projects[selected_project_index].imgs, image_index));
         }
     });
     
