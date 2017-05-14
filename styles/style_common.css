@@ -73,7 +73,7 @@ body, textarea
 {
     font-size: 13.25pt;
 }
-.section_title hr
+.section_title hr, #my_div hr
 {
     width: 65%;
     height: 3px;
@@ -87,7 +87,7 @@ body, textarea
     /*margin: 0 7.5%;*/
     padding: 35px 2.5%;
 }
-.section, input, textarea, #my_div
+.section, input, textarea, #my_div_content
 {
     margin: 8.5pt 0;
     font-size: 15.5pt;
