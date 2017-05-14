@@ -120,7 +120,7 @@ $(document).ready(function(e)
         if(e.target.id != "image_gallery_icon_selected")
         {
             var image_index = $(this).index();
-            var project_index = $(this).parent().parent().parent().parent().index(".project_content");
+            var project_index = $(this).parent().parent().parent().parent().index();
             //console.log($(this).parent().parent().parent().parent());
             console.log(image_index);
             console.log(project_index);
