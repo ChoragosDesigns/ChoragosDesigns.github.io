@@ -6,7 +6,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="scripts/Document2.js"></script>
     <script src="scripts/index_scripts.js"></script>
-    <script src="scripts/project_blurb_script.js"></script>
+    <script src="scripts/skills_icons.js"></script>
+    <!---<script src="scripts/project_blurb_script.js"></script>--->
     <link type="text/css" rel="stylesheet" href="styles/style_common.css" />
     <link type="text/css" rel="stylesheet" href="styles/projects.css" />
     <link type="text/css" rel="stylesheet" href="styles/email_form_style.css" />
@@ -25,7 +26,6 @@
             /*margin-top: 20.31px;*/
             position: absolute;
             z-index: 2;
-           background-color: purple;
        }
        #my_div_content
        {
@@ -63,7 +63,7 @@
         }
         .skill p
         {
-            text-align: justify;
+            text-align: left;
         }
     </style>
 </head>
@@ -97,12 +97,14 @@
         </div>
         <div class="section" id="skills_section">
             <div class="skill">
+                <canvas class="skill_icon_canvas" id="icon_canvas_front_end">To enjoy the full experience, please use a browser that suports the canvas tag.</canvas>
                 <div class="skill_text">
                     <h3>Front-End Website Development</h3>
                     <p>I work closely with designers to translate their concepts and layouts into functional code.</p>
                  </div>
             </div>
             <div class="skill">
+                <canvas class="skill_icon_canvas" id="icon_canvas_interactive_app">To enjoy the full experience, please use a browser that suports the canvas tag.</canvas>
                 <div class="skill_text">
                     <h3>Interactive App Development</h3>
                     <p>I develop captivating interactive experiences to entertain or even educate users using 
@@ -111,12 +113,14 @@
             </div>
             <div class="skill">
                 <div class="skill_text">
+                    <canvas class="skill_icon_canvas" id="icon_canvas_dynamic_dev">To enjoy the full experience, please use a browser that suports the canvas tag.</canvas>
                     <h3>Dynamic Web Development</h3>
                     <p>I have experience working with APIs and using AJAX to create dynamic web pages.</p>
                  </div>
             </div>
             <div class="skill">
                 <div class="skill_text">
+                    <canvas class="skill_icon_canvas" id="icon_canvas_wordpress">To enjoy the full experience, please use a browser that suports the canvas tag.</canvas>
                     <h3>WordPress Customization</h3>
                     <p>I can customize your personal WordPress site to include your content and tweak themes to fit
                            your personal style.</p>
