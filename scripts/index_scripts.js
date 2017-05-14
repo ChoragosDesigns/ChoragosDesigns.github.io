@@ -20,13 +20,16 @@ $(document).ready(function(e)
                 if(project == featured_project_indexes[featured_project])
                 {
                     featured_projects.push(my_projects[project]);
-                    //featured_projects_html += drawSelectedProject(my_projects, project);
                 }
             }
         }
         for(var featured_project = 0; featured_project < featured_projects.length; featured_project++)
         {
             featured_projects_html += drawSelectedProject(featured_projects, featured_project);
+            if(featured_project != (featured_projects.length - 1))
+            {
+                featured_projects_html += "<hr>";
+            }
         }
         document.getElementById("featured_projects_section").innerHTML = featured_projects_html;
         hideText(false, null);
