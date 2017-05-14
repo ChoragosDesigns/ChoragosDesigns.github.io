@@ -12,7 +12,7 @@ $(document).ready(function()
     if($("#my_div").height() < $("#my_div_content").height())
     {
         console.log("heloooooo");
-        $("#my_div").width("10px");
+        $("#my_div").height($("#my_div_content").height());
     }
     main_canvas_context.canvas.width = $("#my_div").width();
     main_canvas_context.canvas.height = ($("#my_div").height());
