@@ -59,6 +59,19 @@ $(document).ready(function()
     {
         //changeCurrentImageGalleryImg(my_projects, e, this);
     });
+    
+    $("#featured_projects_section").on("click", ".image_gallery_icon", function(e)
+    {
+        if(e.target.id != "image_gallery_icon_selected")
+        {
+            var image_index = $(this).index();
+            var project_index = $(this).parent().parent().parent().index(".project_content");
+            $(this).parent().parent().find(".project_image_gallery_img").attr("src", featured_projects[project_index].imgs[image_index].src);
+            $(this).parent().html(drawImageGalleryIcons(featured_projects[project_index].imgs, image_index));
+        }
+    });
+    
+    
     $("#projects_section").on("click", "#more_projects_button", function(e)
     {
         document.getElementById("projects_section").innerHTML = project_thumbnail_section_html;
