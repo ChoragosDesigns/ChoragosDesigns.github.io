@@ -124,8 +124,8 @@ $(document).ready(function(e)
             console.log($(this).parent().parent().parent());
             console.log(image_index);
             console.log(project_index);
-            //$(this).parent().parent().find(".project_image_gallery_img").attr("src", featured_projects[project_index].imgs[image_index].src);
-            //$(this).parent().html(drawImageGalleryIcons(featured_projects[project_index].imgs, image_index));
+            $(this).parent().parent().find(".project_image_gallery_img").attr("src", featured_projects[project_index].imgs[image_index].src);
+            $(this).parent().html(drawImageGalleryIcons(featured_projects[project_index].imgs, image_index));
         }
     });
 });
