@@ -543,22 +543,25 @@ function drawWordpressIcon(ctx, step)
     var outer_gear = new GearObject((ctx.canvas.width/2), (ctx.canvas.height/2), 7, (((ctx.canvas.width/3)/2) - (ctx.canvas.width * 0.013)),  ((((ctx.canvas.width/3)/2) - (ctx.canvas.width * 0.013)) + (ctx.canvas.width * 0.034)), (((((ctx.canvas.width/3)/2) - (ctx.canvas.width * 0.013)) + (ctx.canvas.width * 0.034)) + (ctx.canvas.width * 0.030)));
     var gears = [gear0, gear1, gear2, outer_gear];
     
-    ctx.fillStyle = "rgb(255, 255, 255)";
-    ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    for(var g = 0; g < gears.length; g++)
+    wordpress_logo.onload = function()
     {
-        if(g == 1)
+        ctx.fillStyle = "rgb(255, 255, 255)";
+        ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        for(var g = 0; g < gears.length; g++)
         {
-             drawGear(ctx, gears[g], (step * -1));   
+            if(g == 1)
+            {
+                 drawGear(ctx, gears[g], (step * -1));   
+            }
+            else
+            {
+                 drawGear(ctx, gears[g], step);
+            }
         }
-        else
-        {
-             drawGear(ctx, gears[g], step);
-        }
+        
+        ctx.drawImage(wordpress_logo, ((ctx.canvas.width/2) - (wordpress_logo_width/2)), ((ctx.canvas.height/2) - (wordpress_logo_width/2)), wordpress_logo_width, wordpress_logo_width); 
+        ctx.drawImage(wordpress_logo, 10, 10, 150, 100); 
     }
-    
-    ctx.drawImage(wordpress_logo, ((ctx.canvas.width/2) - (wordpress_logo_width/2)), ((ctx.canvas.height/2) - (wordpress_logo_width/2)), wordpress_logo_width, wordpress_logo_width); 
-    ctx.drawImage(wordpress_logo, 10, 10, 150, 100); 
 }
 
 
