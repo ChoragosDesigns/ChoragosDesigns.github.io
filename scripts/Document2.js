@@ -9,8 +9,23 @@ $(document).ready(function()
     console.log(n);
     var main_canvas = document.getElementById("my_div_canvas");
     var main_canvas_context = main_canvas.getContext('2d');
+    if($("#my_div").height() < $("#my_div_content").height())
+    {
+        console.log("heloooooo");
+        $("#my_div").width("10px");
+    }
     main_canvas_context.canvas.width = $("#my_div").width();
-    main_canvas_context.canvas.height = ($("#my_div").height() - $("#header").height());
+    main_canvas_context.canvas.height = ($("#my_div").height());
+    //main_canvas_context.canvas.height = ($("#my_div").height() - $("#header").height());
+    
+    
+    console.log($("#my_div_content").height());
+    console.log($("#my_div").height());
+    /*if($("#my_div").height() < $("#my_div_content").height())
+    {
+        console.log("heloooooo");
+        $("#my_div").width("10px");
+    }*/
     
     
     var grd=main_canvas_context.createLinearGradient(0,0,0,main_canvas_context.canvas.height);
