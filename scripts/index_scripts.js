@@ -116,14 +116,10 @@ $(document).ready(function(e)
     });
     $("#featured_projects_section").on("click", ".image_gallery_icon", function(e)
     {
-        //changeCurrentImageGalleryImg(my_projects, e, this);
         if(e.target.id != "image_gallery_icon_selected")
         {
             var image_index = $(this).index();
             var project_index = $(this).parent().parent().parent().index();
-            console.log($(this).parent().parent().parent());
-            console.log(image_index);
-            console.log(project_index);
             $(this).parent().parent().find(".project_image_gallery_img").attr("src", featured_projects[project_index].imgs[image_index].src);
             $(this).parent().html(drawImageGalleryIcons(featured_projects[project_index].imgs, image_index));
         }
