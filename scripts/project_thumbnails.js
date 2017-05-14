@@ -2,6 +2,7 @@
 
 $(document).ready(function()
 {
+    console.log("hello worlld");
     var my_projects = [];
     var selected_project;
     var project_thumbnail_section_html = document.getElementById("projects_section").innerHTML;
@@ -9,6 +10,7 @@ $(document).ready(function()
     var xhr = new XMLHttpRequest();
     xhr.onload = function()
     {
+        console.log("hello earth");
         var myJSON = JSON.parse(xhr.responseText);
         my_projects = myJSON.projects;
         var section_width = $("#projects_section").width();
