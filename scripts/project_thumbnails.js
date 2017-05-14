@@ -69,8 +69,8 @@ $(document).ready(function()
         {
             var image_index = $(this).index();
             var project_index = $(this).parent().parent().parent().index(".project_content");
-            $(this).parent().parent().find(".project_image_gallery_img").attr("src", featured_projects[project_index].imgs[image_index].src);
-            $(this).parent().html(drawImageGalleryIcons(featured_projects[project_index].imgs, image_index));
+            $(this).parent().parent().find(".project_image_gallery_img").attr("src", my_projects[project_index].imgs[image_index].src);
+            $(this).parent().html(drawImageGalleryIcons(my_projects[project_index].imgs, image_index));
         }
     });
     
