@@ -58,6 +58,7 @@ $(document).ready(function(e)
         $(".project_content").each(function(i)
         {
             console.log(i);
+            console.log($(i));
             if($(i).find(".project_description_hidden_text").length > 0)
             {
                 $(".project_description_cell").append("<p class='project_description_button'>SHOW MORE</p>");
