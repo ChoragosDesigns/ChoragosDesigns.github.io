@@ -1,0 +1,53 @@
+#my_div
+       {
+           width: 100%;
+           height: 100vh;
+       }
+       #my_div hr
+       {
+           width: 65%;
+       }
+       #my_div_canvas
+       {
+            /*margin-top: 20.31px;*/
+            position: absolute;
+            z-index: 2;
+       }
+       #my_div_content
+       {
+           width: 45%;
+           margin: 20px 27.5%;
+           position: absolute;
+           z-index: 3;
+           text-align: center;
+       }
+       #greeting
+       {
+           font-size: 16.5pt;
+           font-weight: 600;
+       }
+    
+    
+    
+        #skills_section
+        {
+            display: inline-block;
+        }
+        .skill
+        {
+            width: 25%;
+            /*padding: 0 7.5%;*/
+            float: left;
+        }
+        .skill_text
+        {
+            padding: 0 7.5%;
+        }
+        .skill h3
+        {
+            text-align: center;
+        }
+        .skill p
+        {
+            text-align: left;
+        }
