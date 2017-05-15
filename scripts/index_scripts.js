@@ -64,7 +64,8 @@ $(document).ready(function(e)
                 console.log(".project_description_text");
                 $(".project_description_cell").append("<p class='project_description_button'>SHOW MORE</p>");
             }*/
-            console.log($(i));
+            //console.log($(i));
+            console.log(this);
         });
         
         
