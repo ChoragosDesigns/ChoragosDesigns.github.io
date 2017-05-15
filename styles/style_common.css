@@ -16,7 +16,7 @@ body, textarea
     width: 100%;
     position: fixed;
     z-index: 4;
-    background-color: orange;
+    background-color: #54B1FE;
 }
 #header a
 {
@@ -32,17 +32,17 @@ body, textarea
     display: inline;
     margin: 0 7.5pt 0 0;
     padding: 2.5pt 7pt;
-    border: 1px solid yellow;
+    border: 1px solid #311AEE;
     border-radius: 50px;
     font-size: 13.25pt;
 }
 #current_page, .ui_button:hover
 {
-    background-color: yellow;
+    background-color: #311AEE;
 }
-#current_page, .ui_button a:hover
+#current_page, #header a:hover
 {
-    color: orange;
+    color: #BBB3FF;
 }
 
 
@@ -56,13 +56,13 @@ body, textarea
 .section_title
 {
     padding: 110px 0 30px 0;
-    background-color: rgba(0, 120, 180, 0.75);
+    text-align: center;
+    background-color: #7CC3FE;
 }
 .section_title h3, .section_title p
 {
     margin: 0;
     line-height: 145%;
-    text-align: center;
 }
 .section_title h3
 {
@@ -75,7 +75,7 @@ body, textarea
 }
 .section_title hr, #my_div hr
 {
-    width: 65%;
+    width: 45%;
     height: 3px;
     margin: 0;
     border: none;
