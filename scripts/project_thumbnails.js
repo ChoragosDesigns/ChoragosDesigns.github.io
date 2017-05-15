@@ -94,8 +94,8 @@ $(document).ready(function()
                 var img_width = $(".project_image_gallery_img").width();
                 var new_img_width = img_width * percentage;
                 
-                $(".project_image_gallery").height(description_section_height);
-                $(".project_image_gallery_img").height(description_section_height-image_icon_wrapper_height);
+                $(".project_image_gallery").height(project_description_height);
+                $(".project_image_gallery_img").height(project_description_height - image_icon_wrapper_height);
                 $(".project_image_gallery_img").width(new_img_width);
         }
         
