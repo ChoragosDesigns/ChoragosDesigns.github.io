@@ -57,19 +57,25 @@ $(document).ready(function(e)
         
         $(".project_content").each(function(i)
         {
-            console.log(i);
-            /*console.log($(i).find(".project_description_hidden_text"));
-            if($(i).find(".project_description_hidden_text").length > 0)
-            {
-                console.log(".project_description_text");
-                $(".project_description_cell").append("<p class='project_description_button'>SHOW MORE</p>");
-            }*/
-            //console.log($(i));
-            console.log(this);
             if($(this).find(".project_description_hidden_text").length > 0)
             {
-                console.log("go");
                 $(this).find(".project_description_cell").append("<p class='project_description_button'>SHOW MORE</p>");
+            }
+            
+            var image_gallery_section_height = $(this).find(".project_image_gallery").height();
+            var project_description_height = $(this).find(".project_description").height();
+            
+            if(image_gallery_section_height > project_description_height)
+            {
+                var image_icon_wrapper_height = $(this).find(".project_image_gallery_icon_wrapper").height();
+                var img_height = $(this).find(".project_image_gallery_img").height();
+                var percentage = ((project_description_height - image_icon_wrapper_height)/img_height);
+                var img_width = $(this).find(".project_image_gallery_img").width();
+                var new_img_width = img_width * percentage;
+                
+                $(this).find(".project_image_gallery").height(project_description_height);
+                $(this).find(".project_image_gallery_img").height(project_description_height - image_icon_wrapper_height);
+                $(this).find(".project_image_gallery_img").width(new_img_width);
             }
         });
         
