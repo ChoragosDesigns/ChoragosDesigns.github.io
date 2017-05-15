@@ -72,7 +72,7 @@ $(document).ready(function()
         if($(".project_content").find(".project_description_hidden_text").length > 0)
         {
             console.log("helooooooooooooooooooooooooooo");
-            $(".project_description_cell").html += "<p class='ui_button project_description_button'>SHOW MORE</p>";
+            $(".project_description_cell").append("<p class='ui_button project_description_button'>SHOW MORE</p>");
         }
         /*if($(".project_content > .project_description_hidden_text").length > 0)
         {
