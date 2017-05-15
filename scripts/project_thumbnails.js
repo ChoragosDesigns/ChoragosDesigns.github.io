@@ -15,7 +15,6 @@ $(document).ready(function()
         project_thumbnail_section_html += drawProjectThumbnail(my_projects, section_width);
         document.getElementById("projects_section").innerHTML = project_thumbnail_section_html;
         console.log($("#projects_section").width());
-        
         $(".project_thumbnail").each(function(i)
         {
             $(this).width($("#projects_section").width()/4);
@@ -67,12 +66,10 @@ $(document).ready(function()
             $(".project_image_gallery_img").height(project_description_height - image_icon_wrapper_height);
             $(".project_image_gallery_img").width(new_img_width);
         }
-        
         if($(".project_content").find(".project_description_hidden_text").length > 0)
         {
             $(".project_description_cell").append("<p class='project_description_button'>SHOW MORE</p>");
         }
-        
         hideText(false, null);
     });
     $("#projects_section").on("click", ".project_description_button", function(e)

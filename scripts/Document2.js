@@ -24,23 +24,33 @@ $(document).ready(function()
             grd.addColorStop(0, "rgb(0, 7, 18)");
             grd.addColorStop(1, "rgb(0, 11, 29)");
             $(".top_div_content").css("color", "rgb(235, 235, 235)");
-            /*grd.addColorStop(0, "rgb(108, 177, 255)");
-            grd.addColorStop(1, "rgb(0, 101, 214)");*/
+            $("#my_div hr").css("background-color", "rgba(235, 235, 235, 0.65)");
+            $("#github_logo").attr("src", "logos/github_logo_light.png");
+            $("#linkedin_logo").attr("src", "logos/linkedin_logo_light.png");
         }
         else if(n >= 4 && n < 5)
         {
             grd.addColorStop(1, "rgb(0, 18, 46)");
             grd.addColorStop(0, "rgb(0, 8, 22)");
+            $("#my_div hr").css("background-color", "rgba(12, 12, 12, 0.65)");
+            $("#github_logo").attr("src", "logos/github_logo_dark.png");
+            $("#linkedin_logo").attr("src", "logos/linkedin_logo_dark.png");
         }
         else if(n >= 5 && n < 7)
         {
             grd.addColorStop(0, "rgb(0, 101, 214)");
             grd.addColorStop(1, "rgb(0, 71, 150)");
+            $("#my_div hr").css("background-color", "rgba(12, 12, 12, 0.65)");
+            $("#github_logo").attr("src", "logos/github_logo_dark.png");
+            $("#linkedin_logo").attr("src", "logos/linkedin_logo_dark.png");
         }
         else if(n >= 7 && n < 12)
         {
             grd.addColorStop(0, "rgb(108, 177, 255)");
             grd.addColorStop(1, "rgb(0, 101, 214)");
+            $("#my_div hr").css("background-color", "rgba(12, 12, 12, 0.65)");
+            $("#github_logo").attr("src", "logos/github_logo_dark.png");
+            $("#linkedin_logo").attr("src", "logos/linkedin_logo_dark.png");
         }
         document.getElementById("greeting").innerHTML = "Good morning!";
     }
@@ -49,20 +59,19 @@ $(document).ready(function()
         grd.addColorStop(0, "rgb(108, 177, 255)");
         grd.addColorStop(1, "rgb(0, 101, 214)");
         document.getElementById("greeting").innerHTML = "Good afternoon!";
+        $("#my_div hr").css("background-color", "rgba(12, 12, 12, 0.65)");
+        $("#github_logo").attr("src", "logos/github_logo_dark.png");
+        $("#linkedin_logo").attr("src", "logos/linkedin_logo_dark.png");
     }
     else if(n >= 17)
     {
-        if(n >= 17 && n < 20)
         {
-            
-        }
-        if(n >= 20 && n < 21)
-        {
-            
-        }
-        if(n >= 21)
-        {
-            
+            grd.addColorStop(0, "rgb(0, 7, 18)");
+            grd.addColorStop(1, "rgb(0, 11, 29)");
+            $(".top_div_content").css("color", "rgb(235, 235, 235)");
+            $("#my_div hr").css("background-color", "rgba(235, 235, 235, 0.65)");
+            $("#github_logo").attr("src", "logos/github_logo_light.png");
+            $("#linkedin_logo").attr("src", "logos/linkedin_logo_light.png");
         }
         document.getElementById("greeting").innerHTML = "Good evening!";
     }
