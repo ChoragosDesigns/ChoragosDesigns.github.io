@@ -32,6 +32,51 @@ $(document).ready(function(e)
             }
         }
         document.getElementById("featured_projects_section").innerHTML = featured_projects_html;
+        
+        /*
+        
+        var image_gallery_section_height = $(".project_image_gallery").height();
+        var project_description_height = $(".project_description").height();
+        console.log(image_gallery_section_height);
+        if(image_gallery_section_height > project_description_height)
+        {
+            var image_icon_wrapper_height = $(".project_image_gallery_icon_wrapper").height();
+            var img_height = $(".project_image_gallery_img").height();
+            var percentage = ((project_description_height - image_icon_wrapper_height)/img_height);
+            var img_width = $(".project_image_gallery_img").width();
+            var new_img_width = img_width * percentage;
+            
+            $(".project_image_gallery").height(project_description_height);
+            $(".project_image_gallery_img").height(project_description_height - image_icon_wrapper_height);
+            $(".project_image_gallery_img").width(new_img_width);
+        }
+        if($(".project_content").find(".project_description_hidden_text").length > 0)
+        {
+            $(".project_description_cell").append("<p class='project_description_button'>SHOW MORE</p>");
+        }*/
+        
+        for(var featured_project = 0; featured_project < featured_projects.length; featured_project++)
+        {
+            var image_gallery_section_height = $("#featured_project_" + featured_project).find(".featured_project_image_gallery").height();
+            var description_section_height = $("#featured_project_" + featured_project).find(".featured_project_description").height();
+            
+            if(image_gallery_section_height > description_section_height)
+            {
+                var image_icon_wrapper_height = $("#featured_project_" + featured_project).find(".featured_project_image_gallery_icon_wrapper").height();
+                var img_height = $("#featured_project_" + featured_project).find(".featured_project_image_gallery_img").height();
+                var percentage = ((description_section_height - image_icon_wrapper_height)/img_height);
+                var img_width = $("#featured_project_" + featured_project).find(".featured_project_image_gallery_img").width();
+                var new_img_width = img_width * percentage;
+                
+                $("#featured_project_" + featured_project).find(".featured_project_image_gallery").height(description_section_height);
+                $("#featured_project_" + featured_project).find(".featured_project_image_gallery_img").height(description_section_height-image_icon_wrapper_height);
+                $("#featured_project_" + featured_project).find(".featured_project_image_gallery_img").width(new_img_width);
+            }
+        }
+        
+        
+        
+        
         hideText(false, null);
     }
     var url = "scripts/projects.json";
