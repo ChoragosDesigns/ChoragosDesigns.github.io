@@ -69,14 +69,14 @@ $(document).ready(function()
         }
         
         
-        /*if($(".project_content").find(".project_description_hidden_text"))
+        if($(".project_content").find(".project_description_hidden_text").length > 0)
         {
             console.log("helooooooooooooooooooooooooooo");
-        }*/
-        if($(".project_content > .project_description_hidden_text").length > 0)
+        }
+        /*if($(".project_content > .project_description_hidden_text").length > 0)
         {
             console.log("oh kay");
-        }
+        }*/
         
         hideText(false, null);
     });
