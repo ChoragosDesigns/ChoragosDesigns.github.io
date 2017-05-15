@@ -17,7 +17,6 @@ function drawSelectedProject(all_projects_array, project_index)
     {
         selected_project_html += "<p class='project_description_text'>" + all_projects_array[project_index].description[p] + "</p>";
     }
-    selected_project_html += "<p class='ui_button project_description_button'>SHOW MORE</p>"
     selected_project_html += "</div>";
     selected_project_html += "</div>";
     selected_project_html += "<div class='project_image_gallery'>";
@@ -57,11 +56,8 @@ function hideText(was_triggered, this_)
     }
     else
     {
-        console.log(this_);
-        console.log($(this_).parent().parent());
         if($(this_).parent().parent().find(".project_description_hidden_text").is(':hidden'))
         {
-            console.log("ohe hey there");
             $(this_).parent().parent().find(".project_description_hidden_text").css('display', 'inline');
             $(this_).text("SHOW LESS");
         }
