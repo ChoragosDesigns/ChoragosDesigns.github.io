@@ -22,37 +22,6 @@ $(document).ready(function()
             $(this).height($("#projects_section").width()/4);
             $(this).css("margin", "0 " + (($("#projects_section").width()/4)/6) + "px " + (($("#projects_section").width()/4)/6) + "px " + (($("#projects_section").width()/4)/6) + "px ");
         });
-        
-        
-        
-        
-        
-        
-        /*for(var featured_project = 0; featured_project < featured_projects.length; featured_project++)
-        {
-            var image_gallery_section_height = $("#featured_project_" + featured_project).find(".featured_project_image_gallery").height();
-            var description_section_height = $("#featured_project_" + featured_project).find(".featured_project_description").height();
-            
-            if(image_gallery_section_height > description_section_height)
-            {
-                var image_icon_wrapper_height = $("#featured_project_" + featured_project).find(".featured_project_image_gallery_icon_wrapper").height();
-                var img_height = $("#featured_project_" + featured_project).find(".featured_project_image_gallery_img").height();
-                var percentage = ((description_section_height - image_icon_wrapper_height)/img_height);
-                var img_width = $("#featured_project_" + featured_project).find(".featured_project_image_gallery_img").width();
-                var new_img_width = img_width * percentage;
-                
-                $("#featured_project_" + featured_project).find(".featured_project_image_gallery").height(description_section_height);
-                $("#featured_project_" + featured_project).find(".featured_project_image_gallery_img").height(description_section_height-image_icon_wrapper_height);
-                $("#featured_project_" + featured_project).find(".featured_project_image_gallery_img").width(new_img_width);
-            }
-            else
-            {
-                console.log("views");
-                
-            }
-        }*/
-        
-        
     }
     var url = "scripts/projects.json";
     xhr.open("GET", url, true);
@@ -89,54 +58,23 @@ $(document).ready(function()
         if(image_gallery_section_height > project_description_height)
         {
             var image_icon_wrapper_height = $(".project_image_gallery_icon_wrapper").height();
-                var img_height = $(".project_image_gallery_img").height();
-                var percentage = ((project_description_height - image_icon_wrapper_height)/img_height);
-                var img_width = $(".project_image_gallery_img").width();
-                var new_img_width = img_width * percentage;
-                
-                $(".project_image_gallery").height(project_description_height);
-                $(".project_image_gallery_img").height(project_description_height - image_icon_wrapper_height);
-                $(".project_image_gallery_img").width(new_img_width);
+            var img_height = $(".project_image_gallery_img").height();
+            var percentage = ((project_description_height - image_icon_wrapper_height)/img_height);
+            var img_width = $(".project_image_gallery_img").width();
+            var new_img_width = img_width * percentage;
+            
+            $(".project_image_gallery").height(project_description_height);
+            $(".project_image_gallery_img").height(project_description_height - image_icon_wrapper_height);
+            $(".project_image_gallery_img").width(new_img_width);
+        }
+        
+        
+        if($(".project_content").find(".project_description_hidden_text"))
+        {
+            console.log("helooooooooooooooooooooooooooo");
         }
         
         hideText(false, null);
-        
-        
-        
-        /*for(var featured_project = 0; featured_project < featured_projects.length; featured_project++)
-        {
-            var image_gallery_section_height = $("#featured_project_" + featured_project).find(".featured_project_image_gallery").height();
-            var description_section_height = $("#featured_project_" + featured_project).find(".featured_project_description").height();
-            
-            if(image_gallery_section_height > description_section_height)
-            {
-                var image_icon_wrapper_height = $("#featured_project_" + featured_project).find(".featured_project_image_gallery_icon_wrapper").height();
-                var img_height = $("#featured_project_" + featured_project).find(".featured_project_image_gallery_img").height();
-                var percentage = ((description_section_height - image_icon_wrapper_height)/img_height);
-                var img_width = $("#featured_project_" + featured_project).find(".featured_project_image_gallery_img").width();
-                var new_img_width = img_width * percentage;
-                
-                $("#featured_project_" + featured_project).find(".featured_project_image_gallery").height(description_section_height);
-                $("#featured_project_" + featured_project).find(".featured_project_image_gallery_img").height(description_section_height-image_icon_wrapper_height);
-                $("#featured_project_" + featured_project).find(".featured_project_image_gallery_img").width(new_img_width);
-            }
-            else
-            {
-                console.log("views");
-                
-            }
-        }*/
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
     });
     $("#projects_section").on("click", ".project_description_button", function(e)
     {
