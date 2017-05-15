@@ -69,6 +69,7 @@ $(document).ready(function(e)
             if($(this).find(".project_description_hidden_text").length > 0)
             {
                 console.log("go");
+                $(this).find(".project_description_cell").append("<p class='project_description_button'>SHOW MORE</p>");
             }
         });
         
