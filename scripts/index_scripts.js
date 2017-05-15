@@ -58,7 +58,7 @@ $(document).ready(function(e)
         $(".project_content").each(function(i)
         {
             console.log(i);
-            console.log($(i));
+            console.log($(i).find(".project_description_hidden_text"));
             if($(i).find(".project_description_hidden_text").length > 0)
             {
                 console.log(".project_description_hidden_text");
