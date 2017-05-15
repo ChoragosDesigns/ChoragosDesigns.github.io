@@ -84,8 +84,20 @@ $(document).ready(function()
         document.getElementById("projects_section").innerHTML = selected_project_html;
         
         var image_gallery_section_height = $(".project_image_gallery").height();
+        var project_description_height = $(".project_description").height();
         console.log(image_gallery_section_height);
-        
+        if(image_gallery_section_height > project_description_height)
+        {
+            var image_icon_wrapper_height = $(".project_image_gallery_icon_wrapper").height();
+                var img_height = $(".project_image_gallery_img").height();
+                var percentage = ((project_description_height - image_icon_wrapper_height)/img_height);
+                var img_width = $(".project_image_gallery_img").width();
+                var new_img_width = img_width * percentage;
+                
+                $(".project_image_gallery").height(description_section_height);
+                $(".project_image_gallery_img").height(description_section_height-image_icon_wrapper_height);
+                $(".project_image_gallery_img").width(new_img_width);
+        }
         
         hideText(false, null);
         
