@@ -66,6 +66,10 @@ $(document).ready(function(e)
             }*/
             //console.log($(i));
             console.log(this);
+            if($(this).find(".project_description_hidden_text").length > 0)
+            {
+                console.log("go");
+            }
         });
         
         
