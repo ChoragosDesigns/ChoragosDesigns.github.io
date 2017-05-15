@@ -55,24 +55,13 @@ $(document).ready(function(e)
             $(".project_description_cell").append("<p class='project_description_button'>SHOW MORE</p>");
         }*/
         
-        for(var featured_project = 0; featured_project < featured_projects.length; featured_project++)
+        $(".project_content").each(function(i)
         {
-            var image_gallery_section_height = $("#featured_project_" + featured_project).find(".featured_project_image_gallery").height();
-            var description_section_height = $("#featured_project_" + featured_project).find(".featured_project_description").height();
-            
-            if(image_gallery_section_height > description_section_height)
+            if($(i).find(".project_description_hidden_text").length > 0)
             {
-                var image_icon_wrapper_height = $("#featured_project_" + featured_project).find(".featured_project_image_gallery_icon_wrapper").height();
-                var img_height = $("#featured_project_" + featured_project).find(".featured_project_image_gallery_img").height();
-                var percentage = ((description_section_height - image_icon_wrapper_height)/img_height);
-                var img_width = $("#featured_project_" + featured_project).find(".featured_project_image_gallery_img").width();
-                var new_img_width = img_width * percentage;
-                
-                $("#featured_project_" + featured_project).find(".featured_project_image_gallery").height(description_section_height);
-                $("#featured_project_" + featured_project).find(".featured_project_image_gallery_img").height(description_section_height-image_icon_wrapper_height);
-                $("#featured_project_" + featured_project).find(".featured_project_image_gallery_img").width(new_img_width);
+                $(".project_description_cell").append("<p class='project_description_button'>SHOW MORE</p>");
             }
-        }
+        });
         
         
         
