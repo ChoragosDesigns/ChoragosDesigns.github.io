@@ -68,10 +68,8 @@ $(document).ready(function()
             $(".project_image_gallery_img").width(new_img_width);
         }
         
-        
         if($(".project_content").find(".project_description_hidden_text").length > 0)
         {
-            console.log("helooooooooooooooooooooooooooo");
             $(".project_description_cell").append("<p class='project_description_button'>SHOW MORE</p>");
         }
         
@@ -92,8 +90,7 @@ $(document).ready(function()
             $(this).parent().html(drawImageGalleryIcons(my_projects[selected_project].imgs, image_index));
         }
     });
-    
-    
+
     $("#projects_section").on("click", "#more_projects_button", function(e)
     {
         document.getElementById("projects_section").innerHTML = project_thumbnail_section_html;
